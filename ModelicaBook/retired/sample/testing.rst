@@ -1,5 +1,0 @@
-Testing
-=======
-
-.. _libs-test:
-

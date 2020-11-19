@@ -1,5 +1,0 @@
-Operators
-=========
-
-.. index:
-   keyword: operator

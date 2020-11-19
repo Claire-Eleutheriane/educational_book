@@ -1,5 +1,0 @@
-Examples
-========
-
-.. _libs-ex:
-
