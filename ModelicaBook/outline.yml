@@ -1,0 +1,485 @@
+Part 1 - Mathematical Behavior:
+  Introduction:
+    What is Modelica?:
+    Why Modelica?:
+    What Modelica allows me to do:
+  Basic Equations:
+    Introduction:
+    Examples:
+      Simplest possible model:
+        - der
+        - Real
+        - model
+        - Comment Strings
+        - initial equations
+      Newtons Law of Cooling:
+        - parameter
+        # Default values
+        - Numbers
+        # Equation, not assignment
+        - Comments
+        - Identifiers
+        - type
+        - unit
+        - displayUnit
+      LotkaVolterra:
+        # Multiple variables
+        - extends
+        - start
+        - min_attr
+        # start for initial conditions
+        # start for non-linear iteration
+      RLC:
+      Rotational Spring-Mass-Damper:
+        # Allows us to use it later for speed measurement?
+    Review:
+      Lexical Conventions:
+        - model
+        - type
+        - end
+        - Comment Strings
+      Built-in Types:
+        - Real
+        - Integer
+        - Boolean
+        - String
+        - min_attr
+        - max_attr
+        - nominal
+        - quantity
+      Variables:
+        - constant
+        - parameter
+      Equations:
+        - der
+        - Equality equations
+        - Arithmetic Operators
+      Builtin Functions:
+        - Mathematical Functions
+        - min
+        - max
+      States:
+        # Discuss states and state selection?
+      Initialization:
+        - initial equations
+        - fixed # Explanation: Allows you to flip special initial equations on and off?
+        # Number of variables
+      Inheritance:
+        - extends
+        - class_modifications
+    Conclusion:
+  Discrete Behavior:
+    Introduction:
+    Examples:
+      Newton Cooling:
+        - if equation
+        - if expression
+        # Variable convection?
+        # Time events
+      Bouncing Ball:
+        - when equation
+        - reinit
+        - pre
+        # State events
+      Decay:
+        # event semantics
+        # chattering
+      RLC with Switch:
+        # Better than the Newton Cooling example?
+      Pulse Generator:
+        - sample
+        - Logical Operators
+        # Discuss discrete states
+        # Multiple pulses at different frequencies
+        # and then signals to or and and them?
+      Counter:
+        - sample
+        - pre
+      Backlash:
+        # Fits the rotational example
+      Speed Measurement:
+        - when statement
+        - discrete
+        # equations with same right hand side.
+        # second order ODEs
+      Hysteresis:
+    Review:
+      Logical expression:
+        - Relational Operators
+        - Logical Operators
+        - edge
+        - change
+      If vs. When:
+      Events:
+      Functions and Events:
+        - Event Generating Functions
+        - abs
+        - sqrt
+        - sign
+        - initial
+        - terminal
+        - noEvent
+        - smooth
+        - smoothOrder
+        - delay # Good example?!?
+        - terminate
+      Discrete Variables:
+        - discrete
+      Equations:
+      Algorithms:
+        - initial algorithms
+      Control Structures:
+        - if statement
+        - if equation
+        - when statement
+        - when equation
+  Vector and Array Equations:
+    Examples:
+      ABCD Form: # With analytical solution to demo trig functions?
+        # Use ABCD form of Lotka-Volterra, RLC, SMD, etc.
+        # Time invariant, Time variant and Non-linear, etc
+        # ABCD as parameters OR variables
+        # Perhaps a sidebar on default values for parameters?
+        # Inheritance
+        - Array Construction
+        - Array Concatenation
+      One-dimensional Heat Conduction:
+        - for equations
+        - Array Comprehensions
+        # vector notation
+        - end index
+      Chemical equations:
+        - enumeration
+        - Enumeration Indexing
+    Review:
+      Array Declarations:
+      Array Construction:
+        # Matrix literal notation
+        - Array Concatenation
+        # Vector literal notation
+        # Ways of building higher dimension arrays
+        - Array Construction
+        # Array comprehensions
+      Arrays Functions:
+        - Array Constructor Functions
+        - fill
+        - zeros
+        - ones
+        - linspace
+        - Array Conversion Functions
+        - Array Algebraic Functions
+        - ndims
+        - size
+        - sum
+        - product
+        # Vectorization of functions
+      Enumerations:
+        - enumeration
+      Indexing:
+        - Array indexing
+        - Enumeration Indexing
+        - slicing
+        - end index
+      Looping:
+        - for equations
+        - for statement
+  Functions:
+    Introduction:
+    Examples:
+      Basic Function:
+        # Polynomial
+        - function
+        - derivative
+        - protected
+        # Harmonic series?
+      Interpolation:
+        # Interpolation
+        # Smoothness + derivative annotation
+        # Foreign function
+        - external
+        - derivative
+        - ExternalObject
+        - Include
+        - IncludeDirectory
+      Controller:
+        - pure
+        - impure
+      Chemical Reaction:
+        # Where reaction coefficient (array) is replaced by function
+        # call
+      Non-Linear Equations:
+        # ?
+        #- homotopy ? (not at present)
+        - inverse
+    Review:
+      Modelica Functions:
+        - function
+        - algorithm
+        - protected
+      Control flow and return values:
+        - break
+        - return
+        - if statement
+        - for statement
+        - while statement
+      External Functions:
+        - external
+        - ExternalObject
+      Pure vs. Impure:
+        - pure
+        - impure
+      Annotations:
+        - derivative
+        - Include
+        - IncludeDirectory
+        - Library
+        - LibraryDirectory
+        - inverse
+        - Inline
+        - LateInline
+        - GenerateEvents #?
+        # Event Generation
+Part 2 - Components:
+  Packages:
+    Introduction:
+      # Introduce Modelica Standard Library
+    Examples:
+      Nested packages:
+        # Introduce the idea of packages with a really simple example
+      RLC:
+        # Show use of fully qualified type names in declarations
+      Newton Cooling:
+        # Show imports of names (including renaming)
+      SecondOrderSystem:
+        # Wildcard imports
+    Review:
+      # Lookup rules!
+      - package
+      - import
+      - within
+      # Directory storage
+  Connectors:
+    Introduction:
+      Through and Across Variables:
+    Examples:
+      Electrical:
+      Thermal:
+      Rotational:
+      Translational:
+      MSL:
+        # Show MSL connectors
+      Hydraulic:
+        # Mass
+      ThermoFluid:
+        # Mass and energy
+      Chemical:
+        # multiple species?
+        # TOO DIFFICULT (should use enum, which means medium model)
+      Block Connectors:
+        # Integer
+        # Real
+        # Last because they are a last resort
+    Review:
+      Connector Definitions:
+        - connector
+      Variables:
+        - parameter
+        - flow
+        - input
+        - output
+      Annotations:
+        - Icon
+        - Documentation
+        # modelica:// links
+  Components:
+    Introduction:
+      # Erector set/Building blocks
+      Reuse:
+      Conservation equations:
+      Balancing:
+      Multi-Domain:
+      Multi-Paradigm:
+    Examples:
+      Newtons Law of Cooling:
+        # Fundamental components
+      RLC:
+        # Revisit switch
+      Rotational Spring-Mass-Damper:
+        # Revisit backlash
+        # Dialog(group, showStartAttribute)
+      Rotational Gear:
+        # Cover supports/reaction torques
+        # Optional components!
+        # State selection/consistent initialization
+      LotkaVolterra:
+        # Need to define connectors and types here
+        # Blog examples
+        - AssertionLevel
+        - assert
+      Block Diagram Components:
+        - block
+        # Warning: not the way to do physical modeling (lecturer blackboard problem)
+        # Basic blocks
+        # Vector connectors (sum)
+        # Add control
+        # Thermal model
+        # Sensors and actuators
+      Speed measurement:
+        # Sensor measurement
+      Chemistry example:
+        # Revisit but show how we can ensure conservation
+        # Not expandable connectors yet, save that for
+        # architectures.
+    Review:
+      Blocks vs. Models vs. Records:
+        # Review connection rules regarding inputs and outputs
+        - input
+        - output
+        - record
+        - model
+        - block
+      Systems:
+        # structural type system
+        - connect
+        - element_modifications
+        - final
+      Model Boundaries:
+        - AssertionLevel
+        - assert
+      Conditional Components:
+        - conditional
+      Annotations:
+        - Icon
+        - Documentation
+        - Dialog
+        # Include "showStartAttribute" in Dialog discussion
+        - Documentation
+        - DynamicSelect
+        - defaultComponentName
+        - defaultComponentPrefixes
+        - Evaluate
+        - HideResult
+        - experiment
+        - preferredView
+        - unassignedMessage
+# Subsystems, Inheritance and Architectures are all related at some level.
+# Need to think about how to "fuse" these topics nicely.
+# Use MSL? (or maybe both, examples and MSL?)
+
+# Subsystems - Start with just systems of components (no redeclare or replaceable)
+  Subsystems:
+    Introduction:
+    Examples:
+      Gear with inertias:
+        # Propagate
+        - final
+      Lotka-Volterra:
+        # Region subsystems
+        # Unconnected semantics (or perhaps earlier?)
+        # Migration
+      Switched Power Supply:
+        # Model diode failure using a switch/short?
+        # Demonstrate parameter expressions (to short diode)
+      Transmission:
+        # ???
+      1D heat transfer:
+        # Use arrays (of components)
+      Pendula:
+        # Arrays of subsystems, 3D and animation
+    Review:
+      # Parameter propagation
+      - final
+      - protected
+      Protection:
+        - protected
+        - public
+      # Arrays of components
+      # Diagram annotations
+  Architecture:
+    Introduction:
+    Examples:
+      Speed Sensing System:
+        # Introduce feedback control
+        - replaceable
+      Thermal Control Example (MultiDomainControl):
+        # Implement sensor with time constant or sampling
+        # Create block for controller and plant
+        # Make sensor and controller replaceable
+        # Heat demand and on/off actuators
+        # Could be used to demonstrate how to do inverse control later
+        - replaceable
+        - expandable
+      # Another example???
+    Review:
+      Reuse:
+        - partial
+        - redeclare
+      Interfaces:
+      Architecture:
+        - replaceable
+        - constrainedby
+        # Mention vehicle interfaces
+      Implementation:
+        - redeclare
+      Buses:
+        - expandable
+      Annotations:
+        - choices
+Part 3 - Advanced Topics:
+  Building Libraries:
+    Review:
+      Packages:
+        - package
+        - encapsulated
+      Annotation:
+        - version
+        - uses
+  Creating Template Models:
+    # Riff off of the SMD model presented in the section on propagation
+  Handling Data:
+  Testing:
+  Symbolic manipulation:
+    Examples:
+      Coupled Rotational SMD System:
+        - stateSelect
+        - StateSelect
+  I/O:
+    Introduction:
+      # I/O as a last result
+    Examples:
+    Review:
+      Printing:
+        - Conversion Functions
+        - getInstanceName
+  Dynamic Scoping:
+    Introduction:
+    Examples:
+    Review:
+      Annotations:
+        - missingInnerMessage
+  Operator Overloading:
+    Examples:
+      # Revist external object interpolation but with
+      # multiple constructors?
+    Review:
+      - operator
+      - operator function
+      - operator record
+  Discrete Systems:
+    # State machines
+  Parametric Modeling:
+    # semiLinear?
+  Fluid Systems:
+    Review:
+      - actualStream
+      - inStream
+      - spatialDistribution
+      - semiLinear
+      - stream
+      - homotopy # Good example?!?
+      # If I can find an example that used semi-linear,
+      # I could introduce it somewhere else
+  Variable Structure:
+  Backward Models:
+    # Build existing architecture model that's invertible?
+  Model-Based System Engineering:

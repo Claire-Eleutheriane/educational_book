@@ -1,0 +1,262 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-14 10:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/behavior/equations/mechanical.rst:4
+msgid "A Mechanical Example"
+msgstr ""
+"Un ejemplo mecánico"
+
+#: ../../source/behavior/equations/mechanical.rst:6
+msgid ""
+"If you are more familiar with mechanical systems, this example might help "
+"reinforce some of the concepts we've covered so far.  The system we wish to "
+"model is the one shown in the following figure:"
+msgstr ""
+"Si se está más familiarizado con los sistemas mecánicos, este ejemplo podría ayudar "
+"a reforzar algunos de los conceptos que hemos tratado hasta ahora. El sistema que queremos "
+"modelar es el que se muestra en la siguiente figura:"
+
+#: ../../source/behavior/equations/mechanical.rst:16
+msgid ""
+"It is worth pointing out how much easier it is to convey the intention of a "
+"model by presenting it in schematic form.  Assuming appropriate graphical "
+"representations are used, experts can very quickly understand the "
+"composition of the system and develop an intuition about how it is likely to"
+" behave.  While we are currently focusing on equations and variables, we "
+"will eventually work our way up to an approach (in the upcoming section of "
+"the book on :ref:`components`) where **models will be built in this "
+"schematic form from the beginning**."
+msgstr ""
+"Merece la pena señalar lo fácil que es transmitir la intención de un "
+"modelo presentándolo de forma esquemática. Suponiendo que se utilizan representaciones "
+"gráficas adecuadas, los expertos pueden entender rápidamente la "
+"composición del sistema y desarrollar una intuición sobre la forma en que es probable que "
+"se comporte. Aunque en estos momentos nos estamos centrando en ecuaciones y variables, "
+"trabajaremos finalmente nos iremos abriendo cambino hasta un enfoque (en la siguiente sección del "
+"libro :ref:`components`) en el que **los modelos se construirán de esta "
+"forma esquemática desde el principio**."
+
+#: ../../source/behavior/equations/mechanical.rst:26
+msgid ""
+"For now, however, we will focus on how to express the equations associated "
+"with this simple mechanical system.  Each inertia has a rotational position,"
+" :math:`\\varphi`, and a rotational speed, :math:`\\omega` where "
+":math:`\\omega = \\dot{\\varphi}`.  For each inertia, the balance of angular"
+" momentum for the inertia can be expressed as:"
+msgstr ""
+"Por ahora, sin embargo, nos centraremos en cómo expresar las ecuaciones asociadas "
+"a este simple sistema mecánico. Cada inercia tiene una posición angular, "
+":math:`\\varphi`, una velocidad angular, :math:`\\omega` donde "
+":math:`\\omega = \\dot{\\varphi}`. Por cada inercia su balance de momentos "
+"angulares puede expresarse como:"
+
+#: ../../source/behavior/equations/mechanical.rst:34
+msgid ""
+"In other words, the sum of the torques, :math:`\\tau`, applied to the "
+"inertia should be equal to the product of the moment of inertia, :math:`J`, "
+"and the angular acceleration, :math:`\\dot{\\omega}`."
+msgstr ""
+"En otras palabras, la suma de momentos, :math:`\\tau`, aplicada a la "
+"inercia debe ser igual al producto del momento de inercia, :math:`J`, "
+"y la aceleración angular, :math:`\\dot{\\omega}`."
+
+#: ../../source/behavior/equations/mechanical.rst:40
+msgid ""
+"At this point, all we are missing are the torque values, :math:`\\tau_i`.  "
+"From the previous figure, we can see that there are two springs and two "
+"dampers.  For the springs, we can use Hooke's law to express the "
+"relationship between torque and angular displacement as follows:"
+msgstr ""
+"En este punto, todo lo que nos falta son los valores de los pares, :math:`\\tau_i`. "
+"En la figura anterior, podemos ver que hay dos muelles y dos "
+"amortiguadores. Para los muelles, podemos usar la ley de Hooke para expresar la "
+"relación entre el par y el desplazamiento angular de la siguiente manera:"
+
+#: ../../source/behavior/equations/mechanical.rst:48
+msgid ""
+"For each damper, we express the relationship between torque and relative "
+"angular velocity as:"
+msgstr ""
+"Para cada amortiguador, expresamos la relación ente el par y la velocidad "
+"angular relativa como:"
+
+#: ../../source/behavior/equations/mechanical.rst:53
+msgid ""
+"If we pull together all of these relations, we get the following system of "
+"equations:"
+msgstr ""
+"Si unimos todas estas relaciones, obtenemos el siguiente sistema de "
+"ecuaciones:"
+
+#: ../../source/behavior/equations/mechanical.rst:63
+msgid "Let's assume our system has the following initial conditions as well:"
+msgstr ""
+"Asumamos también que nuestro sistema tiene las siguientes condiciones iniciales:"
+
+#: ../../source/behavior/equations/mechanical.rst:73
+msgid ""
+"These initial conditions essentially mean that the system starts in a state "
+"where neither inertia is actually moving (*i.e.*, :math:`\\omega=0`), but "
+"there is a non-zero deflection across both springs."
+msgstr ""
+"Estas condiciones iniciales significan esencialmente que el sistema empieza en un estado "
+"en el que ninguna de las inercias se está moviento realmente (*es decir*, :math:`\\omega=0`), pero "
+"hay una deformación distinta de cero en los dos muelles."
+
+#: ../../source/behavior/equations/mechanical.rst:78
+msgid ""
+"Pulling all of these variables and equations together, we can express this "
+"problem in Modelica as follows:"
+msgstr ""
+"Uniendo todas estas variables y ecuaciones juntas, podemos expresar este "
+"problema en Modelica de la siguiente manera:"
+
+#: ../../source/behavior/equations/mechanical.rst:85
+msgid ""
+"As we did with the low-pass filter example, ``RLC1``, let's walk through "
+"this line by line."
+msgstr ""
+"Como hicimos con el ejemplo del filtro pasa bajo, ``RLC1``, vamos a recorrerlo "
+"linea a linea."
+
+#: ../../source/behavior/equations/mechanical.rst:88
+msgid "As usual, we start with the name of the model:"
+msgstr ""
+"Como de costumbre, comenzamos con el nombre del modelo:"
+
+#: ../../source/behavior/equations/mechanical.rst:94
+msgid ""
+"Next, we introduce physical types for a rotational mechanical system, "
+"namely:"
+msgstr ""
+"A continuación, introducimos tipos físicos para un sistema mecánico rotacional, "
+"a saber:"
+
+#: ../../source/behavior/equations/mechanical.rst:100
+msgid ""
+"Then we define the various parameters used to represent the different "
+"physical characteristics of our system:"
+msgstr ""
+"Despues definimos los diversos parámetros usados para representar las diferentes "
+"características físicas de nuestro sistema:"
+
+#: ../../source/behavior/equations/mechanical.rst:107
+msgid ""
+"For this system, there are four non-``parameter`` variables.  These are "
+"defined as follows:"
+msgstr ""
+"Para este sistema, hay cuatro variables que no son ``parameter``. Estas se "
+"definen de la siguiente manera:"
+
+#: ../../source/behavior/equations/mechanical.rst:113
+msgid ""
+"The initial conditions (which we will revisit shortly) are then defined "
+"with:"
+msgstr ""
+"Las condiciones iniciales (que vamos a revisar en breve) se definen "
+"con:"
+
+#: ../../source/behavior/equations/mechanical.rst:119
+msgid "Then come the equations describing the dynamic response of our system:"
+msgstr ""
+"Luego vienen las ecuaciones que describen la respuesta dinámica de nuestro sistema:"
+
+#: ../../source/behavior/equations/mechanical.rst:125
+msgid "And finally, we have the closing of our model definition."
+msgstr ""
+"Y finalmente, tenemos el cierre de la definición de nuestro modelo."
+
+#: ../../source/behavior/equations/mechanical.rst:133
+msgid ""
+"The only drawback of this model is that all of our initial conditions have "
+"been \"hard-coded\" into the model.  This means that we will be unable to "
+"specify any alternative set of initial conditions for this model.  We can "
+"overcome this issue, as we did with our :ref:`Newton cooling examples "
+"<getting-physical>`, by defining ``parameter`` variables to represent the "
+"initial conditions as follows:"
+msgstr ""
+"El único inconveniente de este modelo es que todas nuestras condiciones iniciales se "
+"han \"incrustado directamente\" en el modelo. Esto significa que no seremos capaces de "
+"especificar un conjunto alternativo de condiciones iniciales para este modelo. Podemos "
+"salvar esta cuestión, como hicimos con nuestros :ref:`Newton cooling examples "
+"<getting-physical>`, definiendo variables ``parameter`` para representar las "
+"condiciones iniciales de la siguiente manera:"
+
+#: ../../source/behavior/equations/mechanical.rst:146
+msgid ""
+"In this way, the parameter values can be changed either in the simulation "
+"environment (where parameters are typically editable by the user) or, as we "
+"will see shortly, via so-called \"modifications\"."
+msgstr ""
+"De esta manera, los valores de los parámetros pueden modificarse o bien en el entorno de "
+"simulación (donde típicamente los parámetros son editables por el usuario) o, como "
+"veremos en breve, a través de las llamadas \"modificaciones\"."
+
+#: ../../source/behavior/equations/mechanical.rst:150
+msgid ""
+"You will see in this latest version of the model that the values for the "
+"newly introduced parameters are the same as the hard-coded values used "
+"earlier.  As a result, the default initial conditions will be exactly the "
+"same as they were before.  But now, we have the freedom to explore other "
+"initial conditions as well.  For example, if we simulate the "
+"``SecondOrderSystemInitParams`` model as is, we get the following solution "
+"for the angular positions and velocities:"
+msgstr ""
+"Vereis en esta última versión del modelo que los valores de los "
+"parámetros recien introducidos son los mismos que los valores incrustados utilizados "
+"anteriormente. Como resultado, las condiciones iniciales por defecto serán exactamente las "
+"mismas que eran antes. Pero ahora, tenemos la libertad de explorar también otras "
+"condiciones iniciales. Por ejemplo, si simulamos el modelo "
+"`SecondOrderSystemInitParams`` tal como es, obtenemos la siguiente solución "
+"para las posiciones y velocidades angulares:"
+
+#: ../../source/behavior/equations/mechanical.rst:161
+msgid ""
+"However, if modify the ``phi1_init`` parameter to be *1* at the start of our"
+" simulation, we get this solution instead:"
+msgstr ""
+"Sin embargo, si modificamos el parámetro ``phi1_init`` para que sea *1* al inicio de nuestra "
+"simulación, obtenemos esta solución:"
+
+#: ../../source/behavior/equations/mechanical.rst:0
+msgid "Expanding on this mechanical example"
+msgstr ""
+"Ampliando este ejemplo mecánico"
+
+#: ../../source/behavior/equations/mechanical.rst:168
+msgid ""
+"If you would like to see this example further developed, you may wish to "
+"jump to the set of examples involving rotational systems found in the "
+"section on :ref:`speed-measurement`."
+msgstr ""
+"Si se quiere ver este ejemplo más desarrollado, es posible que desee "
+"saltar al conjunto de ejemplos que incluyen sistemas rotacionales que se encuentran en la "
+"sección :ref:`speed-measurement`."
+
+#: ../../source/behavior/equations/mechanical.rst:172
+msgid ""
+"Otherwise, you can continue to the next set of examples which involve "
+"population dynamics."
+msgstr ""
+"De lo contrario, puede continuar con el siguiente conjunto de ejemplos que involucran "
+"la dinámica poblacional."
+
+#: ../../source/behavior/equations/mechanical.rst:38
+msgid "Hooke's law"
+msgstr ""
+"Ley de Hooke"
+
+#: ../../source/behavior/equations/mechanical.rst:131
+msgid "modifications"
+msgstr ""
+"modificaciones"

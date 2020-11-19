@@ -1,0 +1,28 @@
+[data-id="__intro"] {
+    background: white;
+}
+
+.white {
+    background: white;
+}
+
+.ft-page {
+    background: url(img/bg.jpg);
+}
+
+.flowtime h1, .flowtime h2, .flowtime h3,
+.flowtime h4, .flowtime h5, .flowtime h6 {
+    color: #448;
+    text-shadow: 2px 2px 0 rgba(128, 128, 256, 0.5);
+    line-height: 110%;
+}
+
+iframe {
+    position: absolute;
+    box-shadow: 2px 2px 0 rgba(128, 128, 256, 0.5);
+    border: 2px solid black;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}

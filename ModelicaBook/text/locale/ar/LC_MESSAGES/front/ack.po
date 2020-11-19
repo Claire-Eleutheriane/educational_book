@@ -1,0 +1,609 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example v0.3.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-05-06 08:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/front/ack.rst:2
+msgid "Acknowledgments"
+msgstr "كلمة شكر"
+
+#: ../../source/front/ack.rst:4
+msgid ""
+"This book is the culmination of so many lectures, books, discussions, "
+"conferences, *etc.* that it is impossible to provide a full accounting to "
+"all the people who've had an impact on the book.  Undoubtedly, there are "
+"people I've failed to mention here and I apologize in advance to anyone who "
+"feels they've been overlooked."
+msgstr ""
+"يعتبر هذا الكتاب ثمرة للكثير من المحاضرات والكتب والمناقشات والمؤتمرات وما إلى ذلك."
+" ومن المستحيل أن نقدم بيانا كاملا بكل الناس الذين كان لهم أثر على هذا الكتاب."
+" وبلا شك، فإني لم أذكر الكثيرين منهم هنا وإني أعتذر مسبقا لكل الذين يشعرون أني قد"
+" أهملتهم."
+
+#: ../../source/front/ack.rst:11
+msgid "Technical"
+msgstr "تقنيا وفنيا"
+
+#: ../../source/front/ack.rst:13
+msgid ""
+"On the subject of Modelica, the primary acknowledgment has to be to Hilding "
+"Elmqvist for not only having the technical vision to recognize the potential"
+" impact that symbolic manipulation techniques could have on solving "
+"engineering problems but having the leadership to push this vision forward "
+"as an open standard.  Hilding is the undisputed \"father of Modelica\" and "
+"he deserves considerable credit for all that Modelica has become."
+msgstr ""
+"عندما نتكلم عن لغة مودليكا، فإني أشكر بشكل رئيسي هيلدنج المكفست."
+" ليس فقط ﻷنه صاحب رؤية تقنية وفنية أدرك من خلالها الأثر الكبير لتقنيات التعامل الرمزي"
+" على  حل المسائل الهندسية، ولكن ﻷنه كان رائدا ودفع هذه الرؤية للأمام لتصبح فيما بعد نموذجا"
+" قياسيا مفتوح المصدر."
+" هيلدنج هو بلا منازع \"أبو لغة مودليكا\" وهو يستحق نصيبا كبيرا من الثناء لكل ما وصلت إليه"
+" لغة مودليكا اليوم."
+
+#: ../../source/front/ack.rst:21
+msgid ""
+"Second only to Hilding is Martin Otter, a man who has worked tirelessly for "
+"the advancement of Modelica.  I can honestly say that Martin works harder "
+"than anybody else I know.  He has not only made countless technical "
+"contributions to Modelica, but he's taken on the unenviable and generally "
+"thankless task of managing the Modelica Association.  It is important to "
+"remember that having great technical ideas is by no means a recipe for "
+"success.  Somebody has to be there to push and push and push those ideas "
+"along.  I'd like to thank Martin for all his hard work in making the "
+"Modelica Association what it is today."
+msgstr ""
+"بعد هيلدنج يأتي مارتن أوتر، ذلك الرجل الذي عمل بلا كلل من أجل تقدّم وتطوّر لغة مودليكا."
+" ويمكنني بثقة أن أقول إن مارتن يعمل بجدية أكثر من أي شخص آخر أعرفه في حياتي."
+" فهو لم يقدم فقط عددا غير محدود من المساهمات التقنية والفنية للغة مودليكا، ولكنه أخذ على"
+" عاتقه مهمة لا يحسد عليها وبشكل عام لم يشكره عليها أحد وهي مهمة إدارة جمعية مودليكا."
+" إنه لمن المهم أن نتذكر أن الحصول على الأفكار التقنية العظيمة لا يعني الحصول على وصفة"
+" سريعة للنجاح."
+" فلا بد أن يوجد من يدفع هذه الأفكار ويدفعها ويدفعها للنجاح على طول الطريق."
+" وأنا أريد أن أشكر مارتن على كل العمل الجاد الذي قدمه لكي تصبح جمعية مودليكا"
+" على ما هي عليه اليوم. "
+#: ../../source/front/ack.rst:32
+msgid ""
+"Of course, Martin isn't alone in running the Modelica Association. The "
+"Modelica Association Board and the Members are also extremely important for "
+"raising awareness about Modelica.  In the end, the Modelica Association is "
+"an organization committed to open standards that support engineering and I'd"
+" like to thank all the members for their hard work in this regard."
+msgstr ""
+"بطبيعة الحال، ليس مارتن هو من يقوم وحده على عمل جمعية مودليكا."
+" مجلس الجمعية والأعضاء أيضا كان لهم أهمية كبيرة للغاية في نشر الوعي بلغة مودليكا."
+" في نهاية المطاف، جمعية مودليكا هي منظمة مسئولة عن النماذج القياسية مفتوحة المصدر"
+" التي تدعم الهندسة وأود أن أشكر جميع أعضائها على عملهم الجاد في هذا الصدد."
+#: ../../source/front/ack.rst:39
+msgid ""
+"There wasn't always a Modelica Association, but there was always a Modelica "
+"Design Group.  These are the people who come together several times a year "
+"and work on continuously improving the Modelica language. It is astounding "
+"how much time and energy people have volunteered toward this effort.  I'd "
+"like to thank all those people who've participated in the development of the"
+" Modelica Language and the Modelica Standard Library."
+msgstr ""
+"لم تكن جمعية مودليكا موجودة على الدوام."
+" ولكن كان فريق تصميم مودليكا حاضرا منذ نشأة لغة مودليكا؛"
+" يجتمعون عدة مرات في السنة لكي يعملوا على التحسين المستمر للغة"
+" مودليكا."
+" وما بذله هؤلاء الناس من الجهد والوقت من أجل هذا العمل هو أمر مذهل."
+" أود أن أشكر كل الناس الذين ساهموا في تطوير لغة مودليكا ومكتبة مودليكا القياسية."
+#: ../../source/front/ack.rst:48
+msgid "Personal"
+msgstr "بصورة شخصية"
+
+#: ../../source/front/ack.rst:50
+msgid ""
+"On a personal note, I am forever indebted to my mother, my father, my wife, "
+"my kids and my in-laws for their endless support of my passion for science, "
+"engineering and math.  They are responsible for cultivating and sustaining "
+"my interests in these topics so I owe all the energy and time I'm able to "
+"apply to projects like this one to them."
+msgstr ""
+"على المستوى الشخصي، فأني أدين بالفضل لأمي وأبي وزوجتي وأولادي وأصهاري على دعمهم"
+" لموهبتي وطموحي وشغفي بالعلوم والهندسة والرياضيات بدون توقف."
+" وأرى لهم فضلا كبيرا في تنمية ودعم اهتماماتي في هذه الموضوعات ولهذا فإني أبذل كل ما"
+" أستطيع أن أبذله من الوقت والجهد لتنفيذ مشروعات مثل هذا المشروع من أجلهم."
+
+#: ../../source/front/ack.rst:57
+msgid ""
+"The very idea of a book that is available for free might seem radical to "
+"some.  The basic premise of this project was largely inspired by listening "
+"to and reading the works of Cory Doctorow and Lawrence Lessig.  I'd like to "
+"thank them for opening my eyes to the idea of Creative Commons licensing.  "
+"I'd also like to thank Dietmar Winkler for the many discussions we had on "
+"alternative publishing models.  We would frequently discuss the ideas of "
+"Doctorow and Lessig and how their ideas could be applied to the creation of "
+"more accessible content for the Modelica world."
+msgstr ""
+"قد تبدو للبعض فكرة جعل الكتاب حرا ومتاحا مجانا فكرة مثالية أكثر من اللازم."
+" لقد أتت الفكرة الأساسية لهذا المشروع إلى حد كبير من الاستماع والقراءة لأعمال"
+" كوري دوكتورو ولورانس ليسيغ."
+" لذا أود أن أشكرهما على تفتيح عيني على فكرة رخصة المشاع الإبداعي."
+" أود أيضا أن أشكر ديتمار وينكلر على العديد من المناقشات التي أجريناها معا حول نماذج"
+" النشر البديلة."
+" كنا كثيرا ما نناقش أفكار دوكتورو وليسيغ وكيف يمكننا تطبيقها من أجل عمل محتوى"
+" متاحا عن عالم لغة مودليكا."
+
+#: ../../source/front/ack.rst:67
+msgid ""
+"Looking back, I feel very fortunate to have worked for several companies "
+"that supported my involvement in Modelica.  I first got involved with "
+"Modelica while I was working at Ford Motor Company and I was fortunate that "
+"they were willing to sponsor my participation in many different Modelica "
+"related events.  After Ford, I went to work at Emmeskay (eventually acquired"
+" by LMS).  I benefited enormously from the interactions I had with my "
+"Emmeskay family.  In particular, I'd like to thank my partners, Swami "
+"Gopalswamy and Shiva Shivashankar for giving me the opportunity to be part "
+"of Emmeskay and for being great friends.  While at Emmeskay, it was a "
+"privilege to work with Michael Sasena and John Batteh on several Modelica "
+"related projects.  Emmeskay was an incredible company and this was entirely "
+"a reflection on the great group of people who worked there.  Finally, I'd "
+"like to thank Dassault Systèmes for giving me the opportunity to work with "
+"all the excellent people there as well.  In particular, I'd like to thank "
+"Hilding Elmqvist and Marc Frouin for encouraging me to come work there.  I'd"
+" also like to thank Martin Malmheden, Dag Brück and Sandrine Loembe for all "
+"the good times during my excellent year in Paris."
+msgstr ""
+"وأنا أنظر إلى الماضي، أشعر أنني كنت محظوظا جدا لأنني عملت في العديد من الشركات"
+" التي كان عملي فيها مختصا بلغة مودليكا."
+" عملت ابتداء على لغة مودليكا في شركة فورد للسيارات وكنت محظوظا لأنها"
+" دعمت مشاركتي في العديد من اللقاءات والمحاضرات المختلفة حول لغة مودليكا."
+" بعد شركة فورد، ذهبت للعمل في إميسكاي (والتي هي الآن مملوكة لإل.إم.إس"
+" LMS)."
+" لقد استفدت بشكل كبير جدا من التعامل مع عائلة شركة إميسكاي."
+" وأود أن أشكر سوامي جوبالسوامي وشيفا شيفاشانكار خاصة لأنهما"
+" إتاحا لي الفرصة لأكون جزءا من إميسكاي ولأنهما كانا من أفضل أصدقائي."
+" بينما كنت في إميسكاي، شرفت بالعمل مع مايكل سازينا وجون باته على عدة"
+" مشاريع متعلقة بلغة مودليكا."
+" إميسكاي كانت شركة رائعة وهذا أيضا انطباعي الداخلي عن الناس الذين عملت معهم هناك."
+" وأخيرا أود أن أشكر شركة أنظمة داسو كذلك لأنها أعطتني الفرصة للعمل مع أناس متميزين."
+" أود أن أشكر هيلدنج المكفست ومارك فروين خاصة ﻷنهما شجعاني على العمل هناك. "
+" أود أيضا أن أشكر مارتن مالميدن وداج بروك وساندرين لومب على كل الأوقات التي"
+" قضيناها خلال سنة كاملة في باريس."
+#: ../../source/front/ack.rst:88
+msgid "Contributors"
+msgstr "المساهمون"
+
+#: ../../source/front/ack.rst:90
+msgid ""
+"This project was really an experiment to see if the Kickstarter approach to "
+"publishing could be applied to a niche technical field like Modelica.  I was"
+" pleasantly surprised to see that it could and that this project had enough "
+"support to be funded.  For that reason, I'd like to thank the backers of the"
+" Kickstarter project.  In particular, I'd like the thank the following "
+"people for their exceptionally generous contributions:"
+msgstr ""
+"يعتبر هذا المشروع تجربة يعرف المرء من خلالها ما إذا كان نهج كيكستارتر في النشر"
+" يمكن تطبيقه على مجال تقني متخصص مثل لغة مودليكا."
+" لقد كنت مسرورا لأن هذا المشروع يمكنه أن يحظى وقد حظي بالفعل"
+" بالدعم والتمويل الكافي."
+" ولذلك أود أن أشكر الذين دعموني في مشروع كيكستارتر."
+" وخاصة أولئك الذين قدموا مساهمات سخية للغاية:"
+#: ../../source/front/ack.rst:98
+msgid "Hilding Elmqvist"
+msgstr "هيلدنج المكفست"
+
+#: ../../source/front/ack.rst:99
+msgid "Robert Norris"
+msgstr "روبرت نوريس"
+
+#: ../../source/front/ack.rst:100
+msgid "Matthis Thorade"
+msgstr "ماتيس توراد"
+
+#: ../../source/front/ack.rst:101
+msgid "Henning Francke"
+msgstr "هيننج فرانك"
+
+#: ../../source/front/ack.rst:102
+msgid "Yang Ji"
+msgstr "يانج جي"
+
+#: ../../source/front/ack.rst:103
+msgid "Christoph Höger"
+msgstr "كريستوف هوجر"
+
+#: ../../source/front/ack.rst:104
+msgid "Philipp Mossmann"
+msgstr "فيليب موسمان"
+
+#: ../../source/front/ack.rst:105
+msgid "John Batteh"
+msgstr "جون باته"
+
+#: ../../source/front/ack.rst:106
+msgid "Dirk Zimmer"
+msgstr "ديرك زيمر"
+
+#: ../../source/front/ack.rst:107
+msgid "Jan Brugård"
+msgstr "جان بروجارد"
+
+#: ../../source/front/ack.rst:108
+msgid "Swami Gopalswamy"
+msgstr "سوامي جوبالسوامي"
+
+#: ../../source/front/ack.rst:109
+msgid "Peter Aronsson"
+msgstr "بيتر أرونسون"
+
+#: ../../source/front/ack.rst:110
+msgid "Michael P. Case"
+msgstr "مايكل ب. كاز"
+
+#: ../../source/front/ack.rst:111
+msgid "Markus Groetsch"
+msgstr "ماركوس جروتش"
+
+#: ../../source/front/ack.rst:112
+msgid "Vicente Ramírez Perea"
+msgstr "فيسنت راميريز بيري"
+
+#: ../../source/front/ack.rst:113
+msgid "Tisha Villanueva"
+msgstr "تيشا فيلانوفا"
+
+#: ../../source/front/ack.rst:114
+msgid "Adrian Pop"
+msgstr "أدريان بوب"
+
+#: ../../source/front/ack.rst:115
+msgid "Nimalendiran Kailasanathan"
+msgstr "نيمالينديران كايلازاناثان"
+
+#: ../../source/front/ack.rst:116
+msgid "Kevin Davies"
+msgstr "كيفن ديفيز"
+
+#: ../../source/front/ack.rst:117
+msgid "Peter Harman"
+msgstr "بيتر هارمان"
+
+#: ../../source/front/ack.rst:118
+msgid "Dietmar Winkler"
+msgstr "ديتمار وينكلر"
+
+#: ../../source/front/ack.rst:119
+msgid "Johan Rhodin"
+msgstr "جوهان رودين"
+
+#: ../../source/front/ack.rst:121
+msgid "I'd also like to thank the corporate sponsors:"
+msgstr "وأود أيضا أن أشكر الشركات المساهمة:"
+
+#: ../../source/front/ack.rst:123
+msgid "Gold Sponsors"
+msgstr "المساهمات الذهبية"
+
+#: ../../source/front/ack.rst:125
+msgid "CyDesign"
+msgstr "ساي.ديزاين"
+
+#: ../../source/front/ack.rst:126
+msgid "Wolfram Research"
+msgstr "وولفرام للأبحاث"
+
+#: ../../source/front/ack.rst:127
+msgid "Modelon"
+msgstr "موديلون"
+
+#: ../../source/front/ack.rst:128
+msgid "Maplesoft"
+msgstr "مابلسوفت"
+
+#: ../../source/front/ack.rst:129
+msgid "Dassault Systèmes"
+msgstr "أنظمة داسو"
+
+#: ../../source/front/ack.rst:131
+msgid "Silver Sponsors"
+msgstr "المساهمات الفضية"
+
+#: ../../source/front/ack.rst:133
+msgid "Ricardo Software"
+msgstr "ريكاردو للبرمجيات"
+
+#: ../../source/front/ack.rst:134
+msgid "ITI"
+msgstr "آي.تي.آي"
+
+#: ../../source/front/ack.rst:135
+msgid "Modelica Association"
+msgstr "جمعية مودليكا"
+
+#: ../../source/front/ack.rst:136
+msgid "Global Crown Technology"
+msgstr "كراون العالمية للتقنية"
+
+#: ../../source/front/ack.rst:137
+msgid "Siemens"
+msgstr "سيمنز"
+
+#: ../../source/front/ack.rst:139
+msgid "Bronze"
+msgstr "المساهمات البرونزية"
+
+#: ../../source/front/ack.rst:141
+msgid "Suzhou Tongyuan"
+msgstr "سوجو تونجيان"
+
+#: ../../source/front/ack.rst:142
+msgid "Open Source Modelica Consortium"
+msgstr "المجموعة المتحدة لمودليكا مفتوحة المصدر"
+
+#: ../../source/front/ack.rst:143
+msgid "DOFWare"
+msgstr "دوفوار للبرمجيات"
+
+#: ../../source/front/ack.rst:144
+msgid "Bausch-Gall GmbH"
+msgstr "بوش-جال المحدودة"
+
+#: ../../source/front/ack.rst:145
+msgid "Technische Universität Hamburg/Harburg"
+msgstr "جامعة هامبورج\هاربورج التِقَنِيّة"
+
+#: ../../source/front/ack.rst:146
+msgid "Schlegel Simulation GmbH"
+msgstr "شليجيل المحدودة للمحاكاة"
+
+#: ../../source/front/ack.rst:148
+msgid ""
+"This project shows the power of community to achieve the mutual goal of "
+"creating more quality educational material around Modelica. Literally, this "
+"project could not have happened without them."
+msgstr ""
+"لقد أظهر هذا المشروع مدى قوة التعاون المجتمعي لتحقيق هدف مشترك"
+" وقد كان هذا الهدف هو إنشاء مادة تعليمية أفضل عن لغة مودليكا."
+" ولم يكن هذا المشروع ليتم دون تعاون هؤلاء الناس."
+
+#: ../../source/front/ack.rst:152
+msgid ""
+"The Kickstarter funding allowed me to commit time to this project, but I "
+"also had several people helping me on this project.  First and foremost, I'd"
+" like to once again thank my father who helped proof-read the initial draft "
+"of this book.  Proof-reading is a necessary but rather boring job so I think"
+" he deserves extract credit for making that sacrifice.  Similarly, I'd like "
+"to thank Dietmar Winkler and Michael O'Keefe for providing additional "
+"feedback on the book content.  Dietmar has also helped me test publishing "
+"issues related to supporting ePub and PDF formats."
+msgstr ""
+"لقد سمح لي الدعم والتمويل اللذان قدمتهما كيكستارتر بتوفير الوقت لهذا المشروع،"
+" وحصلت أيضا مع ذلك على مساعدة الكثيرين في هذا المشروع."
+" أولا وقبل كل شيء أود أن أشكر والدي الذي ساعدني بالقراءة والتحقيق للنسخة الأولية"
+" لهذا الكتاب."
+" عمل القراءة والتحقيق يعتبر عملا ضروريا ولكنه ممل ولذلك أظن أن والدي يستحق رصيدا كبيرا"
+" من الثناء على قيامه بهذه التضحية."
+" وبالمثل، أود أن أشكر كل من ديتمار وينكلر ومايكل أوكيف لتقديمهما مقترحات إضافية"
+" عن محتوى الكتاب."
+" ديتمار ساعدني أيضا في اختبار إصدارات النشر التي تدعم الملفات التي بهيئات"
+" ePUB و PDF."
+#: ../../source/front/ack.rst:162
+msgid ""
+"I'd like to thank Jeff Waters for being the \"voice of the sponsor\".  I had"
+" several very productive discussions with Jeff during the course of writing "
+"this book to make sure that the layout and graphical design lived up to "
+"sponsors' expectations."
+msgstr ""
+"أود أن أشكر جيف ووترز ﻷنه كان يمثل \"صوت المساهمين\"."
+" لقد كانت لي مناقشات عديدة بناءة مع جيف أثناء الدورة التدريبية التي كانت عن كتابة"
+" هذا الكتاب للتأكد من أن تصميم الشكل والرسوميات يرقى إلى مستوى توقعات"
+" المساهمين."
+#: ../../source/front/ack.rst:168
+msgid "Tools"
+msgstr "الأدوات البرمجيّة"
+
+#: ../../source/front/ack.rst:170
+msgid ""
+"Building a book like this requires a lot of different tools.  My "
+"productivity was amplified enormously by the use of these tools."
+msgstr ""
+"العمل على مثل هذا الكتاب يحتاج إلى العديد من الأدوات البرمجيّة المختلفة."
+" لقد زادت إنتاجيتي كثيرا من خلال استخدام هذه الأدوات البرمجيّة."
+#: ../../source/front/ack.rst:173
+msgid ""
+"This book was written using Sphinx, a documentation generation tool that "
+"supports multiple outputs.  Sphinx allows me to focus on the content of the "
+"book and takes care of generating the book in multiple formats."
+msgstr ""
+"لقد كتب هذا الكتاب باستخدام سِفِنْكِس"
+" Sphinx"
+" وهي أداة برمجيّة لبناء الوثائق وهي تدعم هيئات مختلفة من ملفات الخرج."
+" سمحت لي سِفِنْكِس بالتركيز على محتوى الكتاب والاعتناء ببناء الكتاب بهيئات مختلفة."
+
+#: ../../source/front/ack.rst:178
+msgid ""
+"In creating this book, I needed a way to test the models that appear in the "
+"book, generate simulation results for plots and generated JavaScript code "
+"that allows the browser integrated simulation capabilities in the HTML book."
+"  OpenModelica supported all of these use cases.  But beyond that, I owe a "
+"big \"Thank You\" to Martin Sjölund and the OpenModelica team for quickly "
+"responding to various issues I had during the creation of the book.  Many "
+"times I would see Martin on Skype late at night (Sweden time) and he was "
+"gracious enough to help me out."
+msgstr ""
+"بينما كنت أعمل على هذا الكتاب، احتجت إلى طريقة لاختبار النماذج التي تظهر في الكتاب"
+" وإلى عمل محاكاة لتوليد النتائج لرسومات المنحنيات وإلى توليد الكود البرمجي لجافاسكريبت الذي يتيح لمتصفح الإنترنت أن يظهر"
+" قدرات المحاكاة المتكاملة في إصدار إتش.تي.إم.إل"
+" HTML
+للكتاب."
+" أوبن مودليكا (مودليكا مفتوحة المصدر)"
+" OpenModelica"
+" كانت تدعم كل هذه الاستخدامات."
+" ومع ذلك، فإني أدين ب\"شكرا\" كبيرة لمارتن سجولاند وفريق أوبن مودليكا (مودليكا مفتوحة المصدر)"
+" OpenModelica"
+" لاستجابتهم السريعة لي في الأمور المختلفة التي قابلتني أثناء عمل هذا الكتاب."
+" لعدة مرات وددت أن أرى مارتن على سكايب"
+" Skype"
+" في ساعة متأخرة من الليل (بتوقيت السويد) وقد كان لديه الكرم الكافي ليساعدني في كل مرة."
+
+#: ../../source/front/ack.rst:188
+msgid ""
+"The browser integrated simulation capabilities in the HTML version of the "
+"book are only possible because of a tool called Emscripten which allows "
+"ordinary code in languages like C and C++ to be cross-compiled (via LLVM) "
+"into JavaScript.  Although I knew this was possible, I didn't really think "
+"this avenue was viable until I saw `the work of Tom Short "
+"<https://github.com/tshort/openmodelica-javascript>`_ integrating "
+"OpenModelica and Emscripten.  The browser integrated simulation capabilities"
+" were greatly enabled by his work in this area."
+msgstr ""
+"كانت إمكانيات المحاكاة المتكاملة للمتصفح في إصدار إتش.تي.إم.إل"
+" HTML"
+" للكتاب متاحة عن طريق أداة برمجيّة تدعى إمسكربتن"
+" Emscripten"
+" والتي كانت تتيح الأكواد البرمجية المعتادة بلغات مثل سي" 
+" C"
+" وسي++"
+" C++"
+" أيضا لكي يتم ترجمتها (عن طريق آلة افتراضية إل.إل.في.إم"
+" LLVM)"
+" إلى جافاسكريبت"
+" JavaScript."
+" على الرغم من أنني كنت أعرف مسبقا أن هذا الأمر ممكن. إلا أنني لم أكن أظن أن هذه الطريقة"
+" موجودة حتى رأيت `عمل توم القصير"
+" <https://github.com/tshort/openmodelica-javascript>`_ "
+" عن كيفية التكامل بين أوبن مودليكا (مودليكا مفتوحة المصدر) وإمسكربتن، ولقد تم تفعيل إمكانيات المحاكاة"
+" المتكاملة للمتصفح بشكل كبير عن طريق عمله في هذا المجال."
+
+#: ../../source/front/ack.rst:196
+msgid ""
+"This book was written using Git as the version control system and `GitHub "
+"<http://github.com>`_ for hosting.  Most people think of the version control"
+" system as some arcane backup system.  But version control systems are at "
+"the heart of collaboration and I'd like to see them used more widely in "
+"engineering.  For this book, the \"pull request\" system from GitHub was "
+"very useful in incorporating feedback from reviewers.  I'd like to again "
+"thank Dietmar Winkler for enlightening me about many different features in "
+"Git."
+msgstr ""
+"تمت كتابة الكتاب باستخدام جِت"
+" Git"
+" كنظام تحكم بالإصدارات وجِت.هب"
+" `GitHub <http://github.com>`_"
+" لاستضافته."
+" معظم الناس يظنون أن نظام التحكم بالإصدارات هو نظام نسخ احتياطي"
+" backup system"
+" غامض."
+" ولكن نظم التحكم بالإصدارات هي مثل القلب للجسد"
+" من أجل التعاون وأرجو أن أراها مستخدمة بشكل واسع في الهندسة."
+" في هذا الكتاب ، نظام \"طلب السحب\"من جِت.هب كان مفيدا جدا في دمج مقترحات"
+" وردود المشاركين والمراجعين."
+" وأود أن أشكر ديتمار وينكلر ثانية على إخباري بالإمكانات المختلفة لجِت"
+" Git."
+#: ../../source/front/ack.rst:205
+msgid ""
+"I used the Emacs editor for this book.  Despite the proliferation of really "
+"excellent editors that support a wide range of languages and platforms, "
+"Emacs remains the work horse of my development process for most projects.  "
+"It seems to support just about every type of file I need to edit out of the "
+"box."
+msgstr ""
+"استخدمت محرر إيماكس لتحرير هذا الكتاب."
+" على الرغم من انتشار محررات ممتازة تدعم مجموعة واسعة من اللغات والمنصات،"
+" ظل إيماكس حصان العمل لعملية التطوير لمعظم مشاريعي."
+" يبدو أنه يدعم كل أنواع الملفات تقريبا التي احتجتها خارج الصندوق."
+#: ../../source/front/ack.rst:211
+msgid ""
+"During the production of this book several tool vendors gave me access to "
+"their proprietary tools.  I didn't utilize these very much, but I wanted to "
+"acknowledge their generosity in providing me with temporary licenses.  "
+"Specifically, I'd like to thank Dassault Systèmes, Maplesoft, Wolfram "
+"Research and ITI for giving me access to Dymola, MapleSim, SystemModeler and"
+" SimulationX, respectively."
+msgstr ""
+"أثناء إنتاج هذا الكتاب قام العديد من بائعي الأدوات البرمجية بإعطائي تصريحا للدخول لأدواتهم."
+" لم أستخدم ذلك كثيرا، ولكني أردت أن أشكرهم لكرمهم بإعطائي رخصا مؤقتة."
+" وعلى وجه التحديد أشكر أنظمة داسو ومابلسوفت ووولفرام للأبحاث"
+" وآي.تي.آي"
+" لإعطائي تصريح الدخول إلى دايمولا، مابل.سيم، سيستيم.موديلَر، سيميوليشن.إكس،"
+" Dymola, MapleSim, SystemModeler, SimulationX,"
+" على الترتيب."
+
+#: ../../source/front/ack.rst:218
+msgid ""
+"Much of this book was written on a MacBook Air.  My very first computer was "
+"an Apple //e.  But since that time, I've worked mainly with PCs and Unix "
+"workstations.  Most recently, I've done a great deal of development on Linux"
+" machines.  I always dismissed using Macs because I was convinced they "
+"couldn't support the kind of command-line oriented development work I "
+"typically do.  I could not have been more wrong.  The eco-systems for MacOSX"
+" is almost identical to the one I was used to in the Linux world.  I am able"
+" to seamlessly transition between MacOSX and Linux environments without any "
+"significant adjustments.  The power and portability of the MacBook Air gave "
+"my entire work process a big boost."
+msgstr ""
+"جزء كبير من هذا الكتاب كتب باستخدام حاسب آلي من النوع ماك.بوك آير"
+" MacBook Air"
+" إن أول حاسب آلي استخدمته كان من النوع آبل //إي"
+" Apple //e"
+" ولكن بعد ذلك استخدمت بشكل رئيسي الحاسبات الشخصية"
+" PCs"
+" ومحطات عمل يونكس"
+" Unix Workstations"
+" وحديثا، تعاملت بشكل كبير مع التطوير على حاسبات تعمل بلينكس"
+" Linux."
+" ودائما كنت أرفض استخدام أجهزة ماك"
+" Mac"
+" ﻷنني كنت مقتنعا بأنها لا تدعم العمل الذي كنت أعمله عادة وهو التطوير الموجه بسطر الأوامر،"
+" وقد كنت مخطئا في هذا."
+" إن أنظمة البيئة البرمجية"
+" eco-systems"
+" لنظام تشغيل ماك أو.إس.إكس"
+" MacOSX"
+" هي نفسها تقريبا التي كنت أستخدمها في عالم لينكس."
+" والانتقال بين بيئات التطوير في نظام تشغيل لينكس ونظام تشغيل ماك ممكن"
+" بسلاسة كبيرة وبدون تعديلات كبيرة."
+" إمكانية التنقل والقوة في الحاسب ماك.بوك آير الآلي أعطى العمليات كلها في العمل دفعة كبيرة."
+
+#: ../../source/front/ack.rst:230
+msgid ""
+"Developing this book involved a lot of testing and debugging of HTML layout,"
+" styling and embedded JavaScript.  Most of this work was done using Firefox "
+"but I've also used Chrome from time to time as well. I'd like to thank both "
+"the Mozilla Foundation and Google for creating such wonderful, standards "
+"compliant browsers."
+msgstr ""
+"تضمن تطوير هذا الكتاب الكثير من الاختبار وإصلاح الأخطاء للتنسيقات والأطر العامة"
+" والجافاسكريبت المضمّنة للإتش.تي.إم.إل."
+" HTML."
+" ولقد تم معظم هذا العمل عن طريق فايرفوكس ولكني استخدمت كروم أيضا من وقت إلى آخر."
+" وأود أن أشكر كلا من مؤسسة موزيلا وجوجل على عملهم في هذه المتصفحات الموافقة"
+" للمعايير."
+
+#: ../../source/front/ack.rst:236
+msgid ""
+"The style of the book owes a fair amount to the `Semantic UI <http://www"
+".semantic-ui.com>`_ CSS framework."
+msgstr ""
+" يدين تنسيق هذا الكتاب بقدر كبير لسيمانتيك يو.آي"
+"`Semantic UI <http://www.semantic-ui.com>`_"
+" وإطار عمل سي.إس.إس الخاص بهم"
+" CSS."
+"\n"
+"\n"
+"-Used Terms المصطلحات المستخدمة-\n"
+"\n"
+"backup system نظام نسخ احتياطي\n"
+"code كود برمجي\n"
+"format هيئة\n"
+"layout إطار عام\n"
+"Modelica association جمعية مودليكا\n"
+"Modelica standard library مكتبة مودليكا القياسية\n"
+"OpenModelica أوبن مودليكا (مودليكا مفتوحة المصدر)\n"
+"open standard نموذج قياسي مفتوح المصدر\n"
+"plot رسم منحنى\n"
+"pull request طلب السحب\n"
+"symbolic manipulation التعامل الرمزي\n"
+"tool أداة برمجيّة\n"
+"version إصدار\n"
+"version control system نظام تحكم بالإصدارات\n"
