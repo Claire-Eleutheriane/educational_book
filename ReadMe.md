@@ -15,4 +15,7 @@ Elle permet d'inclure une fonction Matplotlib dans un document ReST.
 
 ## Prochaines actions
 
-Tester le quantecon-example.
+Ce que je pensais faire : des *ipywidgets*. On donne une valeur, et ça simule derrière avec iPython.
+Ça ne semble pas correctement compatible avec JupyterBook : il y a officiellement des *issues* car les ipywidgets ont besoin d'un kernel Python en parallèle du JavaScript.
+https://jupyterbook.org/interactive/interactive.html conseille d'utiliser la techno Thebe pour faire marcher quelques widgets, via Binder ; chez moi Binder ne marche pas.
+Conclusion : JupyterBook pas ouf pour l'instant !
