@@ -2,5 +2,4 @@ file: README
 sections:
 - file: docs/index
   sections:
-  - file: docs/about_py
-  - file: docs/python_by_example
+  - file: docs/centrifugal_pump
