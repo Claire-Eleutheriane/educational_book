@@ -188,8 +188,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#understanding-the-pump-parameters">
-   Understanding the pump parameters
+  <a class="reference internal nav-link" href="#understanding-the-system-parameters">
+   Understanding the system parameters
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -231,8 +231,18 @@ The correspondance between theoretical and Modelica notations is explicited in t
 <p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Evolution of the fluid mass flow rate in the pipe after switching on the motor.</span><a class="headerlink" href="#pump-output-image" title="Permalink to this image">¶</a></p>
 </div>
 </div>
-<div class="section" id="understanding-the-pump-parameters">
-<h2>Understanding the pump parameters<a class="headerlink" href="#understanding-the-pump-parameters" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="understanding-the-system-parameters">
+<h2>Understanding the system parameters<a class="headerlink" href="#understanding-the-system-parameters" title="Permalink to this headline">¶</a></h2>
+<p>The centrifugal pump has two characteristic functions, usually provided by the manufacturer.
+Both apply to the average volumetric flow rate <span class="math notranslate nohighlight">\(q\)</span> divided by the shaft angular speed <span class="math notranslate nohighlight">\(\omega\)</span>.
+The first characteristic <span class="math notranslate nohighlight">\(f_\eta\)</span> relates the pump hydraulic efficiency to the ratio.
+The other characteristic <span class="math notranslate nohighlight">\(f_h\)</span> relates the pump head to the ratio.</p>
+<p>These characteristics are approximated by second-order polynomials in the pump component:</p>
+<div class="math notranslate nohighlight">
+\[f_h(\frac{q}{\omega}) = a_0 + a_1\left(\frac{q}{\omega}\right) + a_2\left(\frac{q}{\omega}\right)^2\]</div>
+<div class="math notranslate nohighlight">
+\[f_\eta(\frac{q}{\omega}) = b_0 + b_1\left(\frac{q}{\omega}\right) + b_2\left(\frac{q}{\omega}\right)^2\]</div>
+<p>To understand the effect of the characteristic parameters, we modify their value.</p>
 </div>
 <div class="section" id="bibliography">
 <h2>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>

@@ -51,9 +51,20 @@ Evolution of the fluid mass flow rate in the pipe after switching on the motor.
 ```
 
 
-## Understanding the pump parameters
+## Understanding the system parameters
 
+The centrifugal pump has two characteristic functions, usually provided by the manufacturer.
+Both apply to the average volumetric flow rate $q$ divided by the shaft angular speed $\omega$.
+The first characteristic $f_\eta$ relates the pump hydraulic efficiency to the ratio.
+The other characteristic $f_h$ relates the pump head to the ratio.
 
+These characteristics are approximated by second-order polynomials in the pump component:
+
+$$f_h(\frac{q}{\omega}) = a_0 + a_1\left(\frac{q}{\omega}\right) + a_2\left(\frac{q}{\omega}\right)^2$$
+
+$$f_\eta(\frac{q}{\omega}) = b_0 + b_1\left(\frac{q}{\omega}\right) + b_2\left(\frac{q}{\omega}\right)^2$$
+
+To understand the effect of the characteristic parameters, we modify their value.
 
 
 ## Bibliography
