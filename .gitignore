@@ -1,1 +1,64 @@
-/home/gerrer/config/.gitignore
+# Ignore Latex temporary files
+
+*.aux
+*.auxlock
+*.bbl
+*.blg
+*.dvi
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+
+# Ignore pdf under construction
+
+*paper.pdf
+*presentation.pdf
+*report.pdf
+
+# Ignore generated html
+
+*.html
+
+# Ignore code results
+
+*.dill
+*.pkl
+*.study 
+*.csv
+*.xml
+
+# Ignore compiled Python
+
+tmp.py
+*.pyc
+
+# Ignore Modelica logs and FMUS
+
+*_log.txt
+*.mat
+*.c
+*.o
+*.h
+*.libs
+*.makefile
+*_info.json
+*_init.xml
+
+# Ignore Utz branch
+
+import/data/*
+import/document/*
+export/data/*
+
+# Ignore appImage
+*.AppImage
+
+# Ignore example
+
+tsp_book/quantecon-mini-example/*
+tsp_book/_build/*
+tsp_book /.ipynb_checkpoints
+tsp_book/.DS_Store
+tsp_book/__pycache__/
