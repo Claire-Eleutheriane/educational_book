@@ -1,5 +1,4 @@
-file: README
-sections:
+# - file: README
 - file: docs/index
   sections:
-  - file: docs/centrifugal_pump
+    - file: docs/centrifugal_pump
