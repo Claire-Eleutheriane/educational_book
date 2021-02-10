@@ -60,9 +60,9 @@ The other characteristic $f_h$ relates the pump head to the ratio.
 
 These characteristics are approximated by second-order polynomials in the pump component:
 
-$$f_h(\frac{q}{\omega}) = a_0 + a_1\left(\frac{q}{\omega}\right) + a_2\left(\frac{q}{\omega}\right)^2$$
+$$f_h\left(\frac{q}{\omega}\right) = a_0 + a_1\left(\frac{q}{\omega}\right) + a_2\left(\frac{q}{\omega}\right)^2$$
 
-$$f_\eta(\frac{q}{\omega}) = b_0 + b_1\left(\frac{q}{\omega}\right) + b_2\left(\frac{q}{\omega}\right)^2$$
+$$f_\eta\left(\frac{q}{\omega}\right) = b_0 + b_1\left(\frac{q}{\omega}\right) + b_2\left(\frac{q}{\omega}\right)^2$$
 
 To understand the effect of the characteristic parameters, we modify their value.
 
