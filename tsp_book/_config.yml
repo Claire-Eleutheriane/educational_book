@@ -1,0 +1,41 @@
+#######################################################################################
+# Book settings
+title : ThermoSysPro educational book
+author: EDF Lab Chatou PRISM and PHIMECA Engineering
+logo: 'logo_tsp.png'
+
+# Short description about the book
+description: >-
+  Learn ThermoSysPro from examples and use cases.
+
+#######################################################################################
+# Execution settings
+execute:
+  execute_notebooks           : cache
+
+#######################################################################################
+# HTML-specific settings
+html:
+  home_page_in_navbar         : false
+
+# #######################################################################################
+# Interact link settings
+notebook_interface            : "notebook"
+
+#######################################################################################
+# Launch button settings
+repository:
+  url                         : https://github.com/ThermoSysPro/educational_book
+  path_to_book                : "tsp_book"
+
+binder:
+  binderhub_url               : "https://mybinder.org"
+  text                        : "Launch binder"
+
+latex:
+  latex_engine                : "xelatex"
+  latex_documents:
+    targetname: book.tex
+
+bibtex_bibfiles:
+   - _bibliography/references.bib
