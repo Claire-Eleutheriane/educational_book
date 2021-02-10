@@ -11,9 +11,11 @@ kernelspec:
 
 (centrifugal_pump)=
 
-# A centrifugal pump system
+# A cooling system
 
-We build and analyse a cooling system, based on a centrifugal pump.
+We consider a cooling system relying on a centrifugal pump, activated by a motor (see Figure 1). A centrifugal pump converts rotational energy from a motor to energy in a moving fluid, which creates pressure.
+
+The purpose of this case study is to build the cooling system model and check its adequation with the reality.
 
 ## The model
 
@@ -37,6 +39,16 @@ name: pump_motor_image
 ---
 Cooling system using a centrifugal pump activated by a motor.
 ```
+
+
+```{figure} /_static/centrifugal_pump/pump_output.png
+---
+height: 250px
+name: pump_output_image
+---
+Evolution of the nominal flow rate in the pipe after switching on the motor.
+```
+
 
 
 ## Bibliography
