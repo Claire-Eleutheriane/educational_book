@@ -57,7 +57,7 @@ export/data/*
 
 # Ignore example
 
-tsp_book/quantecon-mini-example/*
+quantecon-mini-example/*
 tsp_book/_build/*
 tsp_book /.ipynb_checkpoints
 tsp_book/.DS_Store
