@@ -40,14 +40,19 @@ name: pump_motor_image
 Cooling system using a centrifugal pump activated by a motor.
 ```
 
+We are interested in the mass flow rate at the output of the pump. The mass flow rate must reach a defined nominal value for the installation to work properly.
 
 ```{figure} /_static/centrifugal_pump/pump_output.png
 ---
 height: 250px
 name: pump_output_image
 ---
-Evolution of the nominal flow rate in the pipe after switching on the motor.
+Evolution of the fluid mass flow rate in the pipe after switching on the motor.
 ```
+
+
+## Understanding the pump parameters
+
 
 
 
