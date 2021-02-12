@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A cooling system &#8212; ThermoSysPro educational book</title>
+    <title>Bokeh &#8212; ThermoSysPro educational book</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -56,8 +56,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Bokeh" href="interactive.html" />
-    <link rel="prev" title="ThermoSysPro educational book" href="index.html" />
+    <link rel="prev" title="A cooling system" href="centrifugal_pump.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -88,13 +87,13 @@
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="centrifugal_pump.html">
    A cooling system
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="interactive.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Bokeh
   </a>
  </li>
@@ -136,14 +135,11 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../_sources/docs/centrifugal_pump.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+        
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/docs/centrifugal_pump.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/docs/interactive.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -166,7 +162,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/ThermoSysPro/educational_book/master?urlpath=tree/tsp_book/docs/centrifugal_pump.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ThermoSysPro/educational_book/master?urlpath=tree/tsp_book/docs/interactive.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -183,30 +179,6 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-model">
-   The model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#understanding-the-system-parameters">
-   Understanding the system parameters
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bibliography">
-   Bibliography
-  </a>
- </li>
-</ul>
-
-        </nav>
-        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -214,50 +186,39 @@
         
               <div>
                 
-  <div class="section" id="a-cooling-system">
-<span id="centrifugal-pump"></span><h1>A cooling system<a class="headerlink" href="#a-cooling-system" title="Permalink to this headline">¶</a></h1>
-<p>We consider a cooling system relying on a centrifugal pump, activated by a motor (see Figure 1). A centrifugal pump converts rotational energy from a motor to energy in a moving fluid, which creates pressure.</p>
-<p>The purpose of this case study is to build the cooling system model and check its adequation with the reality.</p>
-<div class="section" id="the-model">
-<h2>The model<a class="headerlink" href="#the-model" title="Permalink to this headline">¶</a></h2>
-<p>The physics preceding the modeling choices of the component is detailed in <span id="id1">[<a class="reference internal" href="#id3"><span>EHB19</span></a>]</span>.
-The correspondance between theoretical and Modelica notations is explicited in the <a class="reference external" href="https://thermosyspro.gitlab.io/documentation/src/WaterSteam/Machines/CentrifugalPump.html">centrifugal pump online documentation</a>.</p>
-<div class="figure align-default" id="pump-image">
-<a class="reference internal image-reference" href="../_images/CentrifugalPump.svg"><img alt="../_images/CentrifugalPump.svg" height="250px" src="../_images/CentrifugalPump.svg" /></a>
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Centrifugal pump symbol in ThermoSysPro.</span><a class="headerlink" href="#pump-image" title="Permalink to this image">¶</a></p>
-</div>
-<p>We connect the centrifugal pump to a motor. The motor starts working at <span class="math notranslate nohighlight">\(t=0\)</span> and activates the pump. A pipe links the pump to a water tank and to a valv. A resistance mimics the friction of the liquid on the inner side of the pipe.</p>
-<div class="figure align-default" id="pump-motor-image">
-<a class="reference internal image-reference" href="../_images/omedit_pump_motor.png"><img alt="../_images/omedit_pump_motor.png" src="../_images/omedit_pump_motor.png" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Cooling system using a centrifugal pump activated by a motor.</span><a class="headerlink" href="#pump-motor-image" title="Permalink to this image">¶</a></p>
-</div>
-<p>We are interested in the mass flow rate at the output of the pump. The mass flow rate must reach a defined nominal value for the installation to work properly.</p>
-<div class="figure align-default" id="pump-output-image">
-<a class="reference internal image-reference" href="../_images/pump_output.png"><img alt="../_images/pump_output.png" src="../_images/pump_output.png" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Evolution of the fluid mass flow rate in the pipe after switching on the motor.</span><a class="headerlink" href="#pump-output-image" title="Permalink to this image">¶</a></p>
+  <div class="section" id="bokeh">
+<h1>Bokeh<a class="headerlink" href="#bokeh" title="Permalink to this headline">¶</a></h1>
+<p>Bokeh provides several options for interactive visualizations, and is part of the PyViz ecosystem. See
+<a class="reference external" href="https://docs.bokeh.org/en/latest/docs/user_guide/jupyter.html#userguide-jupyter">the Bokeh with Jupyter documentation</a> to
+get started.</p>
+<p>Below is some example output. First we’ll initialized Bokeh with <code class="docutils literal notranslate"><span class="pre">output_notebook()</span></code>.
+This needs to be in a separate cell to give the JavaScript time to load.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">iris</span><span class="p">()</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
 </div>
 </div>
-<div class="section" id="understanding-the-system-parameters">
-<h2>Understanding the system parameters<a class="headerlink" href="#understanding-the-system-parameters" title="Permalink to this headline">¶</a></h2>
-<p>The centrifugal pump has two characteristic functions, usually provided by the manufacturer.
-Both apply to the average volumetric flow rate <span class="math notranslate nohighlight">\(q\)</span> divided by the shaft angular speed <span class="math notranslate nohighlight">\(\omega\)</span>.
-The first characteristic <span class="math notranslate nohighlight">\(f_\eta\)</span> relates the pump hydraulic efficiency to the ratio.
-The other characteristic <span class="math notranslate nohighlight">\(f_h\)</span> relates the pump head to the ratio.</p>
-<p>These characteristics are approximated by second-order polynomials in the pump component:</p>
-<div class="math notranslate nohighlight">
-\[f_h\left(\frac{q}{\omega}\right) = a_0 + a_1\left(\frac{q}{\omega}\right) + a_2\left(\frac{q}{\omega}\right)^2\]</div>
-<div class="math notranslate nohighlight">
-\[f_\eta\left(\frac{q}{\omega}\right) = b_0 + b_1\left(\frac{q}{\omega}\right) + b_2\left(\frac{q}{\omega}\right)^2\]</div>
-<p>To understand the effect of the characteristic parameters, we modify their value.</p>
 </div>
-<div class="section" id="bibliography">
-<h2>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
-<p id="id2"><dl class="citation">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">EHB19</a></span></dt>
-<dd><p>Baligh El Hefni and Daniel Bouskela. <em>Modeling and Simulation of Thermal Power Plants with ThermoSysPro: A Theoretical Introduction and a Practical Guide</em>. Springer, 2019.</p>
-</dd>
-</dl>
-</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span><span class="p">,</span> <span class="n">output_notebook</span>
+<span class="n">output_notebook</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we’ll make our plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">figure</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;sepal_width&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;sepal_length&quot;</span><span class="p">],</span> <span class="n">fill_color</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;sepal_length&quot;</span><span class="p">])</span>
+<span class="n">show</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -289,8 +250,7 @@ The other characteristic <span class="math notranslate nohighlight">\(f_h\)</spa
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="index.html" title="previous page">ThermoSysPro educational book</a>
-    <a class='right-next' id="next-link" href="interactive.html" title="next page">Bokeh</a>
+    <a class='left-prev' id="prev-link" href="centrifugal_pump.html" title="previous page">A cooling system</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
