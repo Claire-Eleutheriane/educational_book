@@ -13,7 +13,7 @@ kernelspec:
 
 # A cooling system
 
-We consider a cooling system relying on a centrifugal pump, activated by a motor (see [figure 1](pump_image). A centrifugal pump converts rotational energy from a motor to energy in a moving fluid, which creates pressure.
+We consider a cooling system relying on a centrifugal pump, activated by a motor (see [figure 1](pump_image)). A centrifugal pump converts rotational energy from a motor to energy in a moving fluid, which creates pressure.
 
 The purpose of this case study is to build the cooling system model and check its adequation with the reality.
 
@@ -34,7 +34,7 @@ We connect the centrifugal pump to a motor. The motor starts working at $t=0$ an
 
 ```{figure} /_static/centrifugal_pump/omedit_pump_motor.png
 ---
-height: 250px
+height: 300px
 name: pump_motor_image
 ---
 Cooling system using a centrifugal pump activated by a motor.
