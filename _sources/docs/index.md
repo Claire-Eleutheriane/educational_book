@@ -7,10 +7,10 @@ This educational book is based on the book ["Modeling and Simulation of Thermal 
 More information about the library can be found on ThermoSysPro [website](https://thermosyspro.com/), [documentation](https://thermosyspro.gitlab.io/documentation/) and [GitHub page](https://github.com/ThermoSysPro/ThermoSysPro).
 
 
-```{figure} /_static/index/ConcentratedSolarPowerPlant.png
+```{figure} /_static/index/logo_modelica.png
 ---
-height: 400px
-name: concentrated_solar_pp_image
+height: 150px
+align: right
+name: logo_modelica
 ---
-Thermodynamic cycle of a concentrated solar power plant.
 ```
