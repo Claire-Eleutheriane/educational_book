@@ -33,6 +33,7 @@
 
 tmp.py
 *.pyc
+*-checkpoint.ipynb
 
 # Ignore Modelica logs and FMUS
 
@@ -59,6 +60,5 @@ export/data/*
 
 quantecon-mini-example/*
 tsp_book/_build/*
-tsp_book /.ipynb_checkpoints
 tsp_book/.DS_Store
 tsp_book/__pycache__/
