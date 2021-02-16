@@ -65,11 +65,11 @@ Both apply to the angle between the average volumetric flow rate $q$ divided by 
 
 $$\theta = arctan\left(\frac{q}{\omega}\right) $$
 
-The head characteristic $G_t$ relates the pump head $h_n$ to the angle:
+The head characteristic $G_t$ relates the pump head $h_n$ to the angle $\theta$:
 
 $$ \frac{h_n}{q^2 + \omega^2} = F(\theta). $$
 
-The torque characteristic $G_t$ relates the pump hydraulic torque $T_h$ to the angle:
+The torque characteristic $G_t$ relates the pump hydraulic torque $T_h$ to the angle $\theta$:
 
 $$ \frac{T_h}{q^2 + \omega^2} = G(\theta).$$
 
@@ -90,8 +90,9 @@ data = [0.634, 0.643, 0.646, 0.640, 0.629, 0.613, 0.595, 0.575, 0.552, 0.533,
 -0.423, -0.494, -0.556, -0.620, -0.655, -0.670, -0.670, -0.660, -0.655, -0.640,
 -0.600, -0.570, -0.520, -0.470, -0.430, -0.360, -0.275, -0.160, -0.040, 0.130,
 0.295, 0.430, 0.550, 0.620, 0.634]
-p = figure(plot_width=400, plot_height=400, x_range=(0, 86))
-p.line(np.arange(len(data)), data)
+p = figure(plot_width=400, plot_height=400, x_range=(-3.14, 3.14))
+array_x = np.linspace(- np.pi, np.pi, len(data))
+p.line(array_x, data)
 show(p)
 ```
 
@@ -101,8 +102,9 @@ If `mode_car_Cr`=1, the torque characteristic is complete:
 ```{code-cell} ipython3
 :tags: [hide-input]
 data = [-0.684, -0.547, -0.414, -0.292, -0.187, -0.105, -0.053, -0.012, 0.042, 0.097, 0.156, 0.227,0.300, 0.371, 0.444, 0.522, 0.596, 0.672, 0.738, 0.763, 0.797, 0.837, 0.865, 0.883,0.886, 0.877, 0.859, 0.838, 0.804, 0.758, 0.703, 0.645, 0.583, 0.520, 0.454, 0.408, 0.370, 0.343, 0.331, 0.329, 0.338, 0.354, 0.372, 0.405, 0.450, 0.486, 0.520, 0.552, 0.579, 0.603, 0.616, 0.617, 0.606, 0.582, 0.546, 0.500, 0.432, 0.360, 0.288, 0.214, 0.123, 0.037, -0.053, -0.161, -0.248, -0.314, -0.372, -0.580, -0.740, -0.880, -1.000, -1.120, -1.250, -1.370, -1.490, -1.590, -1.660, -1.690, -1.770, -1.650, -1.590, -1.520, -1.420, -1.320, -1.230, -1.100, -0.980, -0.820, -0.684]
-p = figure(plot_width=400, plot_height=400, x_range=(0, 86))
-p.line(np.arange(len(data)), data)
+p = figure(plot_width=400, plot_height=400, x_range=(-3.14, 3.14))
+array_x = np.linspace(- np.pi, np.pi, len(data))
+p.line(array_x, data)
 show(p)
 ```
 
