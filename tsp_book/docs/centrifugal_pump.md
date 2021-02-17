@@ -11,24 +11,50 @@ kernelspec:
 
 (centrifugal_pump)=
 
-# A cooling system
+# Centrifugal pump
 
-We consider a cooling system relying on a centrifugal pump, activated by a motor (see [figure 1](pump_image)). A centrifugal pump converts rotational energy from a motor to energy in a moving fluid, which creates pressure.
+A centrifugal pump converts rotational energy from a motor to energy in a moving fluid, which creates pressure.
 
-The purpose of this case study is to build the cooling system model and check its adequation with the reality.
+```{figure} /_static/centrifugal_pump/scheme.png
+---
+height: 300px
+name: scheme
+---
+Schematic diagramm of a centrifugal pump.
+```
+
+The purpose of this case study is to understand the functioning of the pump component and model a cooling system.
+
+## CentrifugalPump versus StaticCentrifugalPump
+
+Two ThermoSysPro components model a centrifugal pump: [StaticCentrifugalPump](https://thermosyspro.gitlab.io/documentation/src/WaterSteam/Machines/StaticCentrifugalPump.html) and [CentrifugalPump](https://thermosyspro.gitlab.io/documentation/src/WaterSteam/Machines/CentrifugalPump.html).
+
+For the static centrifugal pump, the rotational speed of the pump is fixed.
+It is therefore impossible to diminish the pump speed to regulate or modify the output flow.
+The centrifugal pump however accepts modifications of the rotational speed during operations.
+% FALSE : IN MODELICA, THE ROTATION SPEED IS A PARAMETER FOR BOTH CASES.
+
+```{figure} /_static/centrifugal_pump/static_vs_dynamic.png
+---
+height: 200px
+name: static_vs_dynamic
+---
+StaticCentrifugalPump (left) and CentrifugalPump (right).
+```
+
+In the following case study, we employ the CentrifugalPump component.
 
 ## The model
 
 The physics preceding the modeling choices of the component is detailed in {cite}`el2019modeling`.
 The correspondance between theoretical and Modelica notations is explicited in the [centrifugal pump online documentation](https://thermosyspro.gitlab.io/documentation/src/WaterSteam/Machines/CentrifugalPump.html).
 
-```{figure} /_static/centrifugal_pump/CentrifugalPump.svg
----
-height: 250px
-name: pump_image
----
-Centrifugal pump symbol in ThermoSysPro.
-```
+%```{figure} /_static/centrifugal_pump/CentrifugalPump.svg
+%---
+%height: 250px
+%---
+%Centrifugal pump symbol in ThermoSysPro.
+%```
 
 We connect the centrifugal pump to a motor. The motor starts working at $t=0$ and activates the pump. A pipe links the pump to a water tank and to a valv. A resistance mimics the friction of the liquid on the inner side of the pipe. 
 
@@ -60,6 +86,11 @@ import numpy as np
 output_notebook()
 ```
 
+The efficiency of the pump is quantified by its hydraulic efficiency $\eta_h$, and the pump head $h_n$.  
+The hydraulic efficiency relates the useful mechanical work to the work produced by the shaft.
+It is linked the hydraulic torque $T_h$.  
+The pump head is the height at which the pump can raise water up.
+
 The centrifugal pump has two characteristic functions, usually provided by the manufacturer.
 Both apply to the angle between the average volumetric flow rate $q$ divided by the shaft angular speed $\omega$:
 
@@ -76,7 +107,7 @@ $$ \frac{T_h}{q^2 + \omega^2} = G(\theta).$$
 
 Two modes are possible for the characteristics, depending on the parameters `mode_car_hn` and `mode_car_Cr`.
 
-If `mode_car_hn`=2, the head characteristic is semi-parabolic. It is computed using the two coefficients `hn_coef`.  
+If `mode_car_hn`=2, the head characteristic is semi-parabolic : only positive values of $q$ and $\omega$ are authorized. The head characteristic is computed from the two coefficients `hn_coef`.  
 If `mode_car_hn`=1, the head characteristic is complete. It is interpolated from the table `F_t`.
 
 ```{code-cell} ipython3
