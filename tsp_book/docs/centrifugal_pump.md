@@ -65,11 +65,11 @@ Both apply to the angle between the average volumetric flow rate $q$ divided by 
 
 $$\theta = arctan\left(\frac{q}{\omega}\right) $$
 
-The head characteristic $G_t$ relates the pump head $h_n$ to the angle $\theta$:
+The head characteristic $F$ relates the pump head $h_n$ to the angle $\theta$:
 
 $$ \frac{h_n}{q^2 + \omega^2} = F(\theta). $$
 
-The torque characteristic $G_t$ relates the pump hydraulic torque $T_h$ to the angle $\theta$:
+The torque characteristic $G$ relates the pump hydraulic torque $T_h$ to the angle $\theta$:
 
 $$ \frac{T_h}{q^2 + \omega^2} = G(\theta).$$
 
@@ -77,7 +77,7 @@ $$ \frac{T_h}{q^2 + \omega^2} = G(\theta).$$
 Two modes are possible for the characteristics, depending on the parameters `mode_car_hn` and `mode_car_Cr`.
 
 If `mode_car_hn`=2, the head characteristic is semi-parabolic. It is computed using the two coefficients `hn_coef`.  
-If `mode_car_hn`=1, the head characteristic is complete:
+If `mode_car_hn`=1, the head characteristic is complete. It is interpolated from the table `F_t`.
 
 ```{code-cell} ipython3
 :tags: [hide-input]
@@ -97,7 +97,7 @@ show(p)
 ```
 
 Similarly, if `mode_car_Cr`=2, the torque characteristic is semi-parabolic. It is computed using the two coefficients `rh_coef`.  
-If `mode_car_Cr`=1, the torque characteristic is complete:
+If `mode_car_Cr`=1, the torque characteristic is complete. It is interpolated from the table `G_t`.
 
 ```{code-cell} ipython3
 :tags: [hide-input]
