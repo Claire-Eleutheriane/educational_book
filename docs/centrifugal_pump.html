@@ -56,7 +56,6 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Bokeh" href="interactive.html" />
     <link rel="prev" title="ThermoSysPro educational book" href="index.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -91,11 +90,6 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Centrifugal pump
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="interactive.html">
-   Bokeh
   </a>
  </li>
 </ul>
@@ -204,6 +198,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#playing-around-with-the-parameters">
+   Playing around with the parameters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bibliography">
    Bibliography
   </a>
@@ -258,313 +257,12 @@ The correspondance between theoretical and Modelica notations is explicited in t
 <h2>Understanding the pump characteristics<a class="headerlink" href="#understanding-the-pump-characteristics" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span><span class="p">,</span> <span class="n">output_notebook</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span><span class="p">,</span> <span class="n">output_notebook</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">output_notebook</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<div class="bk-root">
-    <a href="https://bokeh.org" target="_blank" class="bk-logo bk-logo-small bk-logo-notebook"></a>
-    <span id="1001">Loading BokehJS ...</span>
-</div></div><script type="application/javascript">
-(function(root) {
-  function now() {
-    return new Date();
-  }
-
-  var force = true;
-
-  if (typeof root._bokeh_onload_callbacks === "undefined" || force === true) {
-    root._bokeh_onload_callbacks = [];
-    root._bokeh_is_loading = undefined;
-  }
-
-  var JS_MIME_TYPE = 'application/javascript';
-  var HTML_MIME_TYPE = 'text/html';
-  var EXEC_MIME_TYPE = 'application/vnd.bokehjs_exec.v0+json';
-  var CLASS_NAME = 'output_bokeh rendered_html';
-
-  /**
-   * Render data to the DOM node
-   */
-  function render(props, node) {
-    var script = document.createElement("script");
-    node.appendChild(script);
-  }
-
-  /**
-   * Handle when an output is cleared or removed
-   */
-  function handleClearOutput(event, handle) {
-    var cell = handle.cell;
-
-    var id = cell.output_area._bokeh_element_id;
-    var server_id = cell.output_area._bokeh_server_id;
-    // Clean up Bokeh references
-    if (id != null && id in Bokeh.index) {
-      Bokeh.index[id].model.document.clear();
-      delete Bokeh.index[id];
-    }
-
-    if (server_id !== undefined) {
-      // Clean up Bokeh references
-      var cmd = "from bokeh.io.state import curstate; print(curstate().uuid_to_server['" + server_id + "'].get_sessions()[0].document.roots[0]._id)";
-      cell.notebook.kernel.execute(cmd, {
-        iopub: {
-          output: function(msg) {
-            var id = msg.content.text.trim();
-            if (id in Bokeh.index) {
-              Bokeh.index[id].model.document.clear();
-              delete Bokeh.index[id];
-            }
-          }
-        }
-      });
-      // Destroy server and session
-      var cmd = "import bokeh.io.notebook as ion; ion.destroy_server('" + server_id + "')";
-      cell.notebook.kernel.execute(cmd);
-    }
-  }
-
-  /**
-   * Handle when a new output is added
-   */
-  function handleAddOutput(event, handle) {
-    var output_area = handle.output_area;
-    var output = handle.output;
-
-    // limit handleAddOutput to display_data with EXEC_MIME_TYPE content only
-    if ((output.output_type != "display_data") || (!output.data.hasOwnProperty(EXEC_MIME_TYPE))) {
-      return
-    }
-
-    var toinsert = output_area.element.find("." + CLASS_NAME.split(' ')[0]);
-
-    if (output.metadata[EXEC_MIME_TYPE]["id"] !== undefined) {
-      toinsert[toinsert.length - 1].firstChild.textContent = output.data[JS_MIME_TYPE];
-      // store reference to embed id on output_area
-      output_area._bokeh_element_id = output.metadata[EXEC_MIME_TYPE]["id"];
-    }
-    if (output.metadata[EXEC_MIME_TYPE]["server_id"] !== undefined) {
-      var bk_div = document.createElement("div");
-      bk_div.innerHTML = output.data[HTML_MIME_TYPE];
-      var script_attrs = bk_div.children[0].attributes;
-      for (var i = 0; i < script_attrs.length; i++) {
-        toinsert[toinsert.length - 1].firstChild.setAttribute(script_attrs[i].name, script_attrs[i].value);
-        toinsert[toinsert.length - 1].firstChild.textContent = bk_div.children[0].textContent
-      }
-      // store reference to server id on output_area
-      output_area._bokeh_server_id = output.metadata[EXEC_MIME_TYPE]["server_id"];
-    }
-  }
-
-  function register_renderer(events, OutputArea) {
-
-    function append_mime(data, metadata, element) {
-      // create a DOM node to render to
-      var toinsert = this.create_output_subarea(
-        metadata,
-        CLASS_NAME,
-        EXEC_MIME_TYPE
-      );
-      this.keyboard_manager.register_events(toinsert);
-      // Render to node
-      var props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};
-      render(props, toinsert[toinsert.length - 1]);
-      element.append(toinsert);
-      return toinsert
-    }
-
-    /* Handle when an output is cleared or removed */
-    events.on('clear_output.CodeCell', handleClearOutput);
-    events.on('delete.Cell', handleClearOutput);
-
-    /* Handle when a new output is added */
-    events.on('output_added.OutputArea', handleAddOutput);
-
-    /**
-     * Register the mime type and append_mime function with output_area
-     */
-    OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {
-      /* Is output safe? */
-      safe: true,
-      /* Index of renderer in `output_area.display_order` */
-      index: 0
-    });
-  }
-
-  // register the mime type if in Jupyter Notebook environment and previously unregistered
-  if (root.Jupyter !== undefined) {
-    var events = require('base/js/events');
-    var OutputArea = require('notebook/js/outputarea').OutputArea;
-
-    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {
-      register_renderer(events, OutputArea);
-    }
-  }
-
-  
-  if (typeof (root._bokeh_timeout) === "undefined" || force === true) {
-    root._bokeh_timeout = Date.now() + 5000;
-    root._bokeh_failed_load = false;
-  }
-
-  var NB_LOAD_WARNING = {'data': {'text/html':
-     "<div style='background-color: #fdd'>\n"+
-     "<p>\n"+
-     "BokehJS does not appear to have successfully loaded. If loading BokehJS from CDN, this \n"+
-     "may be due to a slow or bad network connection. Possible fixes:\n"+
-     "</p>\n"+
-     "<ul>\n"+
-     "<li>re-rerun `output_notebook()` to attempt to load from CDN again, or</li>\n"+
-     "<li>use INLINE resources instead, as so:</li>\n"+
-     "</ul>\n"+
-     "<code>\n"+
-     "from bokeh.resources import INLINE\n"+
-     "output_notebook(resources=INLINE)\n"+
-     "</code>\n"+
-     "</div>"}};
-
-  function display_loaded() {
-    var el = document.getElementById("1001");
-    if (el != null) {
-      el.textContent = "BokehJS is loading...";
-    }
-    if (root.Bokeh !== undefined) {
-      if (el != null) {
-        el.textContent = "BokehJS " + root.Bokeh.version + " successfully loaded.";
-      }
-    } else if (Date.now() < root._bokeh_timeout) {
-      setTimeout(display_loaded, 100)
-    }
-  }
-
-
-  function run_callbacks() {
-    try {
-      root._bokeh_onload_callbacks.forEach(function(callback) {
-        if (callback != null)
-          callback();
-      });
-    } finally {
-      delete root._bokeh_onload_callbacks
-    }
-    console.debug("Bokeh: all callbacks have finished");
-  }
-
-  function load_libs(css_urls, js_urls, callback) {
-    if (css_urls == null) css_urls = [];
-    if (js_urls == null) js_urls = [];
-
-    root._bokeh_onload_callbacks.push(callback);
-    if (root._bokeh_is_loading > 0) {
-      console.debug("Bokeh: BokehJS is being loaded, scheduling callback at", now());
-      return null;
-    }
-    if (js_urls == null || js_urls.length === 0) {
-      run_callbacks();
-      return null;
-    }
-    console.debug("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
-    root._bokeh_is_loading = css_urls.length + js_urls.length;
-
-    function on_load() {
-      root._bokeh_is_loading--;
-      if (root._bokeh_is_loading === 0) {
-        console.debug("Bokeh: all BokehJS libraries/stylesheets loaded");
-        run_callbacks()
-      }
-    }
-
-    function on_error() {
-      console.error("failed to load " + url);
-    }
-
-    for (var i = 0; i < css_urls.length; i++) {
-      var url = css_urls[i];
-      const element = document.createElement("link");
-      element.onload = on_load;
-      element.onerror = on_error;
-      element.rel = "stylesheet";
-      element.type = "text/css";
-      element.href = url;
-      console.debug("Bokeh: injecting link tag for BokehJS stylesheet: ", url);
-      document.body.appendChild(element);
-    }
-
-    const hashes = {"https://cdn.bokeh.org/bokeh/release/bokeh-2.2.3.min.js": "T2yuo9Oe71Cz/I4X9Ac5+gpEa5a8PpJCDlqKYO0CfAuEszu1JrXLl8YugMqYe3sM", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.2.3.min.js": "98GDGJ0kOMCUMUePhksaQ/GYgB3+NH9h996V88sh3aOiUNX3N+fLXAtry6xctSZ6", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.2.3.min.js": "89bArO+nlbP3sgakeHjCo1JYxYR5wufVgA3IbUvDY+K7w4zyxJqssu7wVnfeKCq8"};
-
-    for (var i = 0; i < js_urls.length; i++) {
-      var url = js_urls[i];
-      var element = document.createElement('script');
-      element.onload = on_load;
-      element.onerror = on_error;
-      element.async = false;
-      element.src = url;
-      if (url in hashes) {
-        element.crossOrigin = "anonymous";
-        element.integrity = "sha384-" + hashes[url];
-      }
-      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
-      document.head.appendChild(element);
-    }
-  };
-
-  function inject_raw_css(css) {
-    const element = document.createElement("style");
-    element.appendChild(document.createTextNode(css));
-    document.body.appendChild(element);
-  }
-
-  
-  var js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-2.2.3.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.2.3.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.2.3.min.js"];
-  var css_urls = [];
-  
-
-  var inline_js = [
-    function(Bokeh) {
-      Bokeh.set_log_level("info");
-    },
-    function(Bokeh) {
-    
-    
-    }
-  ];
-
-  function run_inline_js() {
-    
-    if (root.Bokeh !== undefined || force === true) {
-      
-    for (var i = 0; i < inline_js.length; i++) {
-      inline_js[i].call(root, root.Bokeh);
-    }
-    if (force === true) {
-        display_loaded();
-      }} else if (Date.now() < root._bokeh_timeout) {
-      setTimeout(run_inline_js, 100);
-    } else if (!root._bokeh_failed_load) {
-      console.log("Bokeh: BokehJS failed to load within specified timeout.");
-      root._bokeh_failed_load = true;
-    } else if (force !== true) {
-      var cell = $(document.getElementById("1001")).parents('.cell').data().cell;
-      cell.output_area.append_execute_result(NB_LOAD_WARNING)
-    }
-
-  }
-
-  if (root._bokeh_is_loading === 0) {
-    console.debug("Bokeh: BokehJS loaded, going straight to plotting");
-    run_inline_js();
-  } else {
-    load_libs(css_urls, js_urls, function() {
-      console.debug("Bokeh: BokehJS plotting callback run at", now());
-      run_inline_js();
-    });
-  }
-}(window));</script></div>
 </div>
 <p>The efficiency of the pump is quantified by its hydraulic efficiency <span class="math notranslate nohighlight">\(\eta_h\)</span>, and the pump head <span class="math notranslate nohighlight">\(h_n\)</span>.<br />
 The hydraulic efficiency relates the useful mechanical work to the work produced by the shaft.
@@ -585,7 +283,7 @@ Both apply to the angle between the average volumetric flow rate <span class="ma
 If <code class="docutils literal notranslate"><span class="pre">mode_car_hn</span></code>=1, the head characteristic is complete. It is interpolated from the table <code class="docutils literal notranslate"><span class="pre">F_t</span></code>.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.634</span><span class="p">,</span> <span class="mf">0.643</span><span class="p">,</span> <span class="mf">0.646</span><span class="p">,</span> <span class="mf">0.640</span><span class="p">,</span> <span class="mf">0.629</span><span class="p">,</span> <span class="mf">0.613</span><span class="p">,</span> <span class="mf">0.595</span><span class="p">,</span> <span class="mf">0.575</span><span class="p">,</span> <span class="mf">0.552</span><span class="p">,</span> <span class="mf">0.533</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.634</span><span class="p">,</span> <span class="mf">0.643</span><span class="p">,</span> <span class="mf">0.646</span><span class="p">,</span> <span class="mf">0.640</span><span class="p">,</span> <span class="mf">0.629</span><span class="p">,</span> <span class="mf">0.613</span><span class="p">,</span> <span class="mf">0.595</span><span class="p">,</span> <span class="mf">0.575</span><span class="p">,</span> <span class="mf">0.552</span><span class="p">,</span> <span class="mf">0.533</span><span class="p">,</span>
 <span class="mf">0.516</span><span class="p">,</span> <span class="mf">0.505</span><span class="p">,</span> <span class="mf">0.504</span><span class="p">,</span> <span class="mf">0.510</span><span class="p">,</span> <span class="mf">0.512</span><span class="p">,</span> <span class="mf">0.522</span><span class="p">,</span> <span class="mf">0.539</span><span class="p">,</span> <span class="mf">0.559</span><span class="p">,</span> <span class="mf">0.580</span><span class="p">,</span> <span class="mf">0.601</span><span class="p">,</span> <span class="mf">0.630</span><span class="p">,</span>
 <span class="mf">0.662</span><span class="p">,</span> <span class="mf">0.692</span><span class="p">,</span> <span class="mf">0.722</span><span class="p">,</span> <span class="mf">0.753</span><span class="p">,</span> <span class="mf">0.782</span><span class="p">,</span> <span class="mf">0.808</span><span class="p">,</span> <span class="mf">0.832</span><span class="p">,</span> <span class="mf">0.857</span><span class="p">,</span> <span class="mf">0.879</span><span class="p">,</span> <span class="mf">0.904</span><span class="p">,</span> <span class="mf">0.930</span><span class="p">,</span>
 <span class="mf">0.959</span><span class="p">,</span> <span class="mf">0.996</span><span class="p">,</span> <span class="mf">1.027</span><span class="p">,</span> <span class="mf">1.060</span><span class="p">,</span> <span class="mf">1.090</span><span class="p">,</span> <span class="mf">1.124</span><span class="p">,</span> <span class="mf">1.165</span><span class="p">,</span> <span class="mf">1.204</span><span class="p">,</span> <span class="mf">1.238</span><span class="p">,</span> <span class="mf">1.258</span><span class="p">,</span> <span class="mf">1.271</span><span class="p">,</span>
@@ -601,46 +299,12 @@ If <code class="docutils literal notranslate"><span class="pre">mode_car_hn</spa
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-
-
-
-
-
-<div class="bk-root" id="30ebcfe3-5c3d-4d7c-a2b2-922998e504c3" data-root-id="1002"></div>
-</div><script type="application/javascript">(function(root) {
-  function embed_document(root) {
-    
-  var docs_json = {"49ba6149-335a-4e96-ab15-f36f3ac66df3":{"roots":{"references":[{"attributes":{"below":[{"id":"1011"}],"center":[{"id":"1014"},{"id":"1018"}],"left":[{"id":"1015"}],"plot_height":400,"plot_width":400,"renderers":[{"id":"1036"}],"title":{"id":"1038"},"toolbar":{"id":"1026"},"x_range":{"id":"1003"},"x_scale":{"id":"1007"},"y_range":{"id":"1005"},"y_scale":{"id":"1009"}},"id":"1002","subtype":"Figure","type":"Plot"},{"attributes":{"text":""},"id":"1038","type":"Title"},{"attributes":{},"id":"1041","type":"BasicTickFormatter"},{"attributes":{},"id":"1044","type":"UnionRenderers"},{"attributes":{},"id":"1045","type":"Selection"},{"attributes":{"data_source":{"id":"1033"},"glyph":{"id":"1034"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1035"},"selection_glyph":null,"view":{"id":"1037"}},"id":"1036","type":"GlyphRenderer"},{"attributes":{"formatter":{"id":"1041"},"ticker":{"id":"1012"}},"id":"1011","type":"LinearAxis"},{"attributes":{"bottom_units":"screen","fill_alpha":0.5,"fill_color":"lightgrey","left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","top_units":"screen"},"id":"1025","type":"BoxAnnotation"},{"attributes":{"end":3.14,"start":-3.14},"id":"1003","type":"Range1d"},{"attributes":{"data":{"x":{"__ndarray__":"GC1EVPshCcApieVAwY8IwDrlhi2H/QfAS0EoGk1rB8BcnckGE9kGwGz5avPYRgbAflUM4J60BcCOsa3MZCIFwJ8NT7kqkATAsGnwpfD9A8DBxZGStmsDwNIhM3982QLA433Ua0JHAsD02XVYCLUBwAU2F0XOIgHAFpK4MZSQAMBN3LM8tPz/v2+U9hVA2P6/kUw578uz/b+yBHzIV4/8v9S8vqHjavu/9nQBe29G+r8YLURU+yH5vzrlhi2H/fe/XJ3JBhPZ9r99VQzgnrT1v58NT7kqkPS/wcWRkrZr87/jfdRrQkfyvwQ2F0XOIvG/TNyzPLT877+QTDnvy7Ptv9S8vqHjauu/GC1EVPsh6b9cnckGE9nmv6ANT7kqkOS/5H3Ua0JH4r9Q3LM8tPzfv9C8vqHjatu/WJ3JBhPZ1r/gfdRrQkfSv9C8vqHjasu/4H3Ua0JHwr/gfdRrQkeyvwAAAAAAAAAA4H3Ua0JHsj/gfdRrQkfCP9C8vqHjass/4H3Ua0JH0j9gnckGE9nWP9i8vqHjats/UNyzPLT83z/kfdRrQkfiP6ANT7kqkOQ/XJ3JBhPZ5j8YLURU+yHpP9S8vqHjaus/kEw578uz7T9Q3LM8tPzvPwQ2F0XOIvE/5H3Ua0JH8j/AxZGStmvzP6ANT7kqkPQ/fFUM4J609T9cnckGE9n2Pzzlhi2H/fc/GC1EVPsh+T/4dAF7b0b6P9S8vqHjavs/tAR8yFeP/D+QTDnvy7P9P3CU9hVA2P4/TNyzPLT8/z8WkrgxlJAAQAQ2F0XOIgFA9Nl1WAi1AUDkfdRrQkcCQNIhM3982QJAwsWRkrZrA0CwafCl8P0DQKANT7kqkARAjrGtzGQiBUB+VQzgnrQFQGz5avPYRgZAXJ3JBhPZBkBKQSgaTWsHQDrlhi2H/QdAKonlQMGPCEAYLURU+yEJQA==","dtype":"float64","order":"little","shape":[89]},"y":[0.634,0.643,0.646,0.64,0.629,0.613,0.595,0.575,0.552,0.533,0.516,0.505,0.504,0.51,0.512,0.522,0.539,0.559,0.58,0.601,0.63,0.662,0.692,0.722,0.753,0.782,0.808,0.832,0.857,0.879,0.904,0.93,0.959,0.996,1.027,1.06,1.09,1.124,1.165,1.204,1.238,1.258,1.271,1.282,1.288,1.281,1.26,1.225,1.172,1.107,1.031,0.942,0.842,0.733,0.617,0.5,0.368,0.24,0.125,0.011,-0.102,-0.168,-0.255,-0.342,-0.423,-0.494,-0.556,-0.62,-0.655,-0.67,-0.67,-0.66,-0.655,-0.64,-0.6,-0.57,-0.52,-0.47,-0.43,-0.36,-0.275,-0.16,-0.04,0.13,0.295,0.43,0.55,0.62,0.634]},"selected":{"id":"1045"},"selection_policy":{"id":"1044"}},"id":"1033","type":"ColumnDataSource"},{"attributes":{},"id":"1043","type":"BasicTickFormatter"},{"attributes":{},"id":"1005","type":"DataRange1d"},{"attributes":{},"id":"1009","type":"LinearScale"},{"attributes":{"formatter":{"id":"1043"},"ticker":{"id":"1016"}},"id":"1015","type":"LinearAxis"},{"attributes":{},"id":"1007","type":"LinearScale"},{"attributes":{},"id":"1024","type":"HelpTool"},{"attributes":{},"id":"1012","type":"BasicTicker"},{"attributes":{"axis":{"id":"1011"},"ticker":null},"id":"1014","type":"Grid"},{"attributes":{"axis":{"id":"1015"},"dimension":1,"ticker":null},"id":"1018","type":"Grid"},{"attributes":{},"id":"1016","type":"BasicTicker"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"1019"},{"id":"1020"},{"id":"1021"},{"id":"1022"},{"id":"1023"},{"id":"1024"}]},"id":"1026","type":"Toolbar"},{"attributes":{},"id":"1020","type":"WheelZoomTool"},{"attributes":{},"id":"1019","type":"PanTool"},{"attributes":{"overlay":{"id":"1025"}},"id":"1021","type":"BoxZoomTool"},{"attributes":{},"id":"1022","type":"SaveTool"},{"attributes":{},"id":"1023","type":"ResetTool"},{"attributes":{"line_color":"#1f77b4","x":{"field":"x"},"y":{"field":"y"}},"id":"1034","type":"Line"},{"attributes":{"line_alpha":0.1,"line_color":"#1f77b4","x":{"field":"x"},"y":{"field":"y"}},"id":"1035","type":"Line"},{"attributes":{"source":{"id":"1033"}},"id":"1037","type":"CDSView"}],"root_ids":["1002"]},"title":"Bokeh Application","version":"2.2.3"}};
-  var render_items = [{"docid":"49ba6149-335a-4e96-ab15-f36f3ac66df3","root_ids":["1002"],"roots":{"1002":"30ebcfe3-5c3d-4d7c-a2b2-922998e504c3"}}];
-  root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
-
-  }
-  if (root.Bokeh !== undefined) {
-    embed_document(root);
-  } else {
-    var attempts = 0;
-    var timer = setInterval(function(root) {
-      if (root.Bokeh !== undefined) {
-        clearInterval(timer);
-        embed_document(root);
-      } else {
-        attempts++;
-        if (attempts > 100) {
-          clearInterval(timer);
-          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
-        }
-      }
-    }, 10, root)
-  }
-})(window);</script></div>
 </div>
 <p>Similarly, if <code class="docutils literal notranslate"><span class="pre">mode_car_Cr</span></code>=2, the torque characteristic is semi-parabolic. It is computed using the two coefficients <code class="docutils literal notranslate"><span class="pre">rh_coef</span></code>.<br />
 If <code class="docutils literal notranslate"><span class="pre">mode_car_Cr</span></code>=1, the torque characteristic is complete. It is interpolated from the table <code class="docutils literal notranslate"><span class="pre">G_t</span></code>.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.684</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.547</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.414</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.292</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.187</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.105</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.053</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.012</span><span class="p">,</span> <span class="mf">0.042</span><span class="p">,</span> <span class="mf">0.097</span><span class="p">,</span> <span class="mf">0.156</span><span class="p">,</span> <span class="mf">0.227</span><span class="p">,</span><span class="mf">0.300</span><span class="p">,</span> <span class="mf">0.371</span><span class="p">,</span> <span class="mf">0.444</span><span class="p">,</span> <span class="mf">0.522</span><span class="p">,</span> <span class="mf">0.596</span><span class="p">,</span> <span class="mf">0.672</span><span class="p">,</span> <span class="mf">0.738</span><span class="p">,</span> <span class="mf">0.763</span><span class="p">,</span> <span class="mf">0.797</span><span class="p">,</span> <span class="mf">0.837</span><span class="p">,</span> <span class="mf">0.865</span><span class="p">,</span> <span class="mf">0.883</span><span class="p">,</span><span class="mf">0.886</span><span class="p">,</span> <span class="mf">0.877</span><span class="p">,</span> <span class="mf">0.859</span><span class="p">,</span> <span class="mf">0.838</span><span class="p">,</span> <span class="mf">0.804</span><span class="p">,</span> <span class="mf">0.758</span><span class="p">,</span> <span class="mf">0.703</span><span class="p">,</span> <span class="mf">0.645</span><span class="p">,</span> <span class="mf">0.583</span><span class="p">,</span> <span class="mf">0.520</span><span class="p">,</span> <span class="mf">0.454</span><span class="p">,</span> <span class="mf">0.408</span><span class="p">,</span> <span class="mf">0.370</span><span class="p">,</span> <span class="mf">0.343</span><span class="p">,</span> <span class="mf">0.331</span><span class="p">,</span> <span class="mf">0.329</span><span class="p">,</span> <span class="mf">0.338</span><span class="p">,</span> <span class="mf">0.354</span><span class="p">,</span> <span class="mf">0.372</span><span class="p">,</span> <span class="mf">0.405</span><span class="p">,</span> <span class="mf">0.450</span><span class="p">,</span> <span class="mf">0.486</span><span class="p">,</span> <span class="mf">0.520</span><span class="p">,</span> <span class="mf">0.552</span><span class="p">,</span> <span class="mf">0.579</span><span class="p">,</span> <span class="mf">0.603</span><span class="p">,</span> <span class="mf">0.616</span><span class="p">,</span> <span class="mf">0.617</span><span class="p">,</span> <span class="mf">0.606</span><span class="p">,</span> <span class="mf">0.582</span><span class="p">,</span> <span class="mf">0.546</span><span class="p">,</span> <span class="mf">0.500</span><span class="p">,</span> <span class="mf">0.432</span><span class="p">,</span> <span class="mf">0.360</span><span class="p">,</span> <span class="mf">0.288</span><span class="p">,</span> <span class="mf">0.214</span><span class="p">,</span> <span class="mf">0.123</span><span class="p">,</span> <span class="mf">0.037</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.053</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.161</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.248</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.314</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.372</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.580</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.740</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.880</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.000</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.120</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.250</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.370</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.490</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.590</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.660</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.690</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.770</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.650</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.590</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.520</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.420</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.320</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.230</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.100</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.980</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.820</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.684</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.684</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.547</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.414</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.292</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.187</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.105</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.053</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.012</span><span class="p">,</span> <span class="mf">0.042</span><span class="p">,</span> <span class="mf">0.097</span><span class="p">,</span> <span class="mf">0.156</span><span class="p">,</span> <span class="mf">0.227</span><span class="p">,</span><span class="mf">0.300</span><span class="p">,</span> <span class="mf">0.371</span><span class="p">,</span> <span class="mf">0.444</span><span class="p">,</span> <span class="mf">0.522</span><span class="p">,</span> <span class="mf">0.596</span><span class="p">,</span> <span class="mf">0.672</span><span class="p">,</span> <span class="mf">0.738</span><span class="p">,</span> <span class="mf">0.763</span><span class="p">,</span> <span class="mf">0.797</span><span class="p">,</span> <span class="mf">0.837</span><span class="p">,</span> <span class="mf">0.865</span><span class="p">,</span> <span class="mf">0.883</span><span class="p">,</span><span class="mf">0.886</span><span class="p">,</span> <span class="mf">0.877</span><span class="p">,</span> <span class="mf">0.859</span><span class="p">,</span> <span class="mf">0.838</span><span class="p">,</span> <span class="mf">0.804</span><span class="p">,</span> <span class="mf">0.758</span><span class="p">,</span> <span class="mf">0.703</span><span class="p">,</span> <span class="mf">0.645</span><span class="p">,</span> <span class="mf">0.583</span><span class="p">,</span> <span class="mf">0.520</span><span class="p">,</span> <span class="mf">0.454</span><span class="p">,</span> <span class="mf">0.408</span><span class="p">,</span> <span class="mf">0.370</span><span class="p">,</span> <span class="mf">0.343</span><span class="p">,</span> <span class="mf">0.331</span><span class="p">,</span> <span class="mf">0.329</span><span class="p">,</span> <span class="mf">0.338</span><span class="p">,</span> <span class="mf">0.354</span><span class="p">,</span> <span class="mf">0.372</span><span class="p">,</span> <span class="mf">0.405</span><span class="p">,</span> <span class="mf">0.450</span><span class="p">,</span> <span class="mf">0.486</span><span class="p">,</span> <span class="mf">0.520</span><span class="p">,</span> <span class="mf">0.552</span><span class="p">,</span> <span class="mf">0.579</span><span class="p">,</span> <span class="mf">0.603</span><span class="p">,</span> <span class="mf">0.616</span><span class="p">,</span> <span class="mf">0.617</span><span class="p">,</span> <span class="mf">0.606</span><span class="p">,</span> <span class="mf">0.582</span><span class="p">,</span> <span class="mf">0.546</span><span class="p">,</span> <span class="mf">0.500</span><span class="p">,</span> <span class="mf">0.432</span><span class="p">,</span> <span class="mf">0.360</span><span class="p">,</span> <span class="mf">0.288</span><span class="p">,</span> <span class="mf">0.214</span><span class="p">,</span> <span class="mf">0.123</span><span class="p">,</span> <span class="mf">0.037</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.053</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.161</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.248</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.314</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.372</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.580</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.740</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.880</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.000</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.120</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.250</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.370</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.490</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.590</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.660</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.690</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.770</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.650</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.590</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.520</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.420</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.320</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.230</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.100</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.980</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.820</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.684</span><span class="p">]</span>
 <span class="n">p</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">plot_width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">plot_height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">x_range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">3.14</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">))</span>
 <span class="n">array_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 <span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">array_x</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
@@ -648,40 +312,74 @@ If <code class="docutils literal notranslate"><span class="pre">mode_car_Cr</spa
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
+</div>
+</div>
+<div class="section" id="playing-around-with-the-parameters">
+<h2>Playing around with the parameters<a class="headerlink" href="#playing-around-with-the-parameters" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span><span class="nn">sys</span><span class="o">,</span><span class="nn">inspect</span>
+<span class="n">current_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">getfile</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">currentframe</span><span class="p">())))</span>
+<span class="n">parent_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">current_dir</span><span class="p">)</span>
+<span class="n">newpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parent_dir</span><span class="p">,</span> <span class="s2">&quot;script&quot;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">newpath</span><span class="p">)</span> 
+<span class="kn">import</span> <span class="nn">fmpy_sim</span>
+
+<span class="n">directory</span> <span class="o">=</span> <span class="s2">&quot;../script/fmu&quot;</span>
+<span class="n">fmu_filename</span> <span class="o">=</span> <span class="s2">&quot;PumpMotor.fmu&quot;</span>
+<span class="n">path_fmu</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">fmu_filename</span><span class="p">)</span>
 
 
+<span class="c1"># Establish parameter bounds</span>
 
+<span class="n">n_simu</span> <span class="o">=</span> <span class="mi">5</span>
 
+<span class="n">dic_nominal</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Pump.hn_coef[1]&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">88.67</span><span class="p">,</span>
+    <span class="s2">&quot;Pump.hn_coef[2]&quot;</span><span class="p">:</span> <span class="mf">43.15</span>
+<span class="p">}</span>
 
-<div class="bk-root" id="16fecb19-92a0-4f93-a302-a81e1c6adc18" data-root-id="1092"></div>
-</div><script type="application/javascript">(function(root) {
-  function embed_document(root) {
-    
-  var docs_json = {"9cddf2c3-7568-46c3-aaa2-ac59f1e1ca3a":{"roots":{"references":[{"attributes":{"below":[{"id":"1101"}],"center":[{"id":"1104"},{"id":"1108"}],"left":[{"id":"1105"}],"plot_height":400,"plot_width":400,"renderers":[{"id":"1126"}],"title":{"id":"1137"},"toolbar":{"id":"1116"},"x_range":{"id":"1093"},"x_scale":{"id":"1097"},"y_range":{"id":"1095"},"y_scale":{"id":"1099"}},"id":"1092","subtype":"Figure","type":"Plot"},{"attributes":{"formatter":{"id":"1142"},"ticker":{"id":"1106"}},"id":"1105","type":"LinearAxis"},{"attributes":{"formatter":{"id":"1140"},"ticker":{"id":"1102"}},"id":"1101","type":"LinearAxis"},{"attributes":{},"id":"1095","type":"DataRange1d"},{"attributes":{},"id":"1097","type":"LinearScale"},{"attributes":{},"id":"1106","type":"BasicTicker"},{"attributes":{},"id":"1102","type":"BasicTicker"},{"attributes":{"axis":{"id":"1101"},"ticker":null},"id":"1104","type":"Grid"},{"attributes":{},"id":"1142","type":"BasicTickFormatter"},{"attributes":{"axis":{"id":"1105"},"dimension":1,"ticker":null},"id":"1108","type":"Grid"},{"attributes":{},"id":"1114","type":"HelpTool"},{"attributes":{"line_alpha":0.1,"line_color":"#1f77b4","x":{"field":"x"},"y":{"field":"y"}},"id":"1125","type":"Line"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"1109"},{"id":"1110"},{"id":"1111"},{"id":"1112"},{"id":"1113"},{"id":"1114"}]},"id":"1116","type":"Toolbar"},{"attributes":{},"id":"1110","type":"WheelZoomTool"},{"attributes":{},"id":"1109","type":"PanTool"},{"attributes":{"line_color":"#1f77b4","x":{"field":"x"},"y":{"field":"y"}},"id":"1124","type":"Line"},{"attributes":{"overlay":{"id":"1115"}},"id":"1111","type":"BoxZoomTool"},{"attributes":{},"id":"1112","type":"SaveTool"},{"attributes":{"source":{"id":"1123"}},"id":"1127","type":"CDSView"},{"attributes":{},"id":"1113","type":"ResetTool"},{"attributes":{"text":""},"id":"1137","type":"Title"},{"attributes":{},"id":"1143","type":"UnionRenderers"},{"attributes":{},"id":"1144","type":"Selection"},{"attributes":{"data_source":{"id":"1123"},"glyph":{"id":"1124"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1125"},"selection_glyph":null,"view":{"id":"1127"}},"id":"1126","type":"GlyphRenderer"},{"attributes":{},"id":"1140","type":"BasicTickFormatter"},{"attributes":{"end":3.14,"start":-3.14},"id":"1093","type":"Range1d"},{"attributes":{"bottom_units":"screen","fill_alpha":0.5,"fill_color":"lightgrey","left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","top_units":"screen"},"id":"1115","type":"BoxAnnotation"},{"attributes":{"data":{"x":{"__ndarray__":"GC1EVPshCcApieVAwY8IwDrlhi2H/QfAS0EoGk1rB8BcnckGE9kGwGz5avPYRgbAflUM4J60BcCOsa3MZCIFwJ8NT7kqkATAsGnwpfD9A8DBxZGStmsDwNIhM3982QLA433Ua0JHAsD02XVYCLUBwAU2F0XOIgHAFpK4MZSQAMBN3LM8tPz/v2+U9hVA2P6/kUw578uz/b+yBHzIV4/8v9S8vqHjavu/9nQBe29G+r8YLURU+yH5vzrlhi2H/fe/XJ3JBhPZ9r99VQzgnrT1v58NT7kqkPS/wcWRkrZr87/jfdRrQkfyvwQ2F0XOIvG/TNyzPLT877+QTDnvy7Ptv9S8vqHjauu/GC1EVPsh6b9cnckGE9nmv6ANT7kqkOS/5H3Ua0JH4r9Q3LM8tPzfv9C8vqHjatu/WJ3JBhPZ1r/gfdRrQkfSv9C8vqHjasu/4H3Ua0JHwr/gfdRrQkeyvwAAAAAAAAAA4H3Ua0JHsj/gfdRrQkfCP9C8vqHjass/4H3Ua0JH0j9gnckGE9nWP9i8vqHjats/UNyzPLT83z/kfdRrQkfiP6ANT7kqkOQ/XJ3JBhPZ5j8YLURU+yHpP9S8vqHjaus/kEw578uz7T9Q3LM8tPzvPwQ2F0XOIvE/5H3Ua0JH8j/AxZGStmvzP6ANT7kqkPQ/fFUM4J609T9cnckGE9n2Pzzlhi2H/fc/GC1EVPsh+T/4dAF7b0b6P9S8vqHjavs/tAR8yFeP/D+QTDnvy7P9P3CU9hVA2P4/TNyzPLT8/z8WkrgxlJAAQAQ2F0XOIgFA9Nl1WAi1AUDkfdRrQkcCQNIhM3982QJAwsWRkrZrA0CwafCl8P0DQKANT7kqkARAjrGtzGQiBUB+VQzgnrQFQGz5avPYRgZAXJ3JBhPZBkBKQSgaTWsHQDrlhi2H/QdAKonlQMGPCEAYLURU+yEJQA==","dtype":"float64","order":"little","shape":[89]},"y":[-0.684,-0.547,-0.414,-0.292,-0.187,-0.105,-0.053,-0.012,0.042,0.097,0.156,0.227,0.3,0.371,0.444,0.522,0.596,0.672,0.738,0.763,0.797,0.837,0.865,0.883,0.886,0.877,0.859,0.838,0.804,0.758,0.703,0.645,0.583,0.52,0.454,0.408,0.37,0.343,0.331,0.329,0.338,0.354,0.372,0.405,0.45,0.486,0.52,0.552,0.579,0.603,0.616,0.617,0.606,0.582,0.546,0.5,0.432,0.36,0.288,0.214,0.123,0.037,-0.053,-0.161,-0.248,-0.314,-0.372,-0.58,-0.74,-0.88,-1.0,-1.12,-1.25,-1.37,-1.49,-1.59,-1.66,-1.69,-1.77,-1.65,-1.59,-1.52,-1.42,-1.32,-1.23,-1.1,-0.98,-0.82,-0.684]},"selected":{"id":"1144"},"selection_policy":{"id":"1143"}},"id":"1123","type":"ColumnDataSource"},{"attributes":{},"id":"1099","type":"LinearScale"}],"root_ids":["1092"]},"title":"Bokeh Application","version":"2.2.3"}};
-  var render_items = [{"docid":"9cddf2c3-7568-46c3-aaa2-ac59f1e1ca3a","root_ids":["1092"],"roots":{"1092":"16fecb19-92a0-4f93-a302-a81e1c6adc18"}}];
-  root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+<span class="n">dic_range</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Pump.hn_coef[1]&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="o">-</span><span class="mi">60</span><span class="p">,</span> <span class="n">n_simu</span><span class="p">),</span>
+    <span class="s2">&quot;Pump.hn_coef[2]&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">n_simu</span><span class="p">)</span>
+<span class="p">}</span>
 
-  }
-  if (root.Bokeh !== undefined) {
-    embed_document(root);
-  } else {
-    var attempts = 0;
-    var timer = setInterval(function(root) {
-      if (root.Bokeh !== undefined) {
-        clearInterval(timer);
-        embed_document(root);
-      } else {
-        attempts++;
-        if (attempts > 100) {
-          clearInterval(timer);
-          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
-        }
-      }
-    }, 10, root)
-  }
-})(window);</script></div>
+<span class="c1"># Define simulation parameters</span>
+
+<span class="n">list_input</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Pump.hn_coef[1]&quot;</span><span class="p">]</span>
+<span class="n">list_output</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Pipe.Q&quot;</span><span class="p">]</span>
+<span class="n">output_filter</span> <span class="o">=</span> <span class="n">list_input</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">list_output</span><span class="p">)</span>
+<span class="n">final_time</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="n">doe_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">xx</span><span class="p">]</span> <span class="k">for</span> <span class="n">xx</span> <span class="ow">in</span> <span class="n">dic_range</span><span class="p">[</span><span class="n">list_input</span><span class="p">[</span><span class="mi">0</span><span class="p">]]])</span>
+<span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;validate&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;fmi_type&quot;</span><span class="p">:</span> <span class="s2">&quot;ModelExchange&quot;</span><span class="p">,</span> <span class="s2">&quot;solver&quot;</span><span class="p">:</span> <span class="s2">&quot;CVode&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;relative_tolerance&quot;</span><span class="p">:</span> <span class="mf">1e-6</span><span class="p">,</span> <span class="s2">&quot;stop_time&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">&quot;output&quot;</span><span class="p">:</span> <span class="n">output_filter</span><span class="p">}</span>
+
+<span class="n">list_df</span> <span class="o">=</span> <span class="n">fmpy_sim</span><span class="o">.</span><span class="n">simulate_on_doe</span><span class="p">(</span>
+    <span class="n">list_input</span><span class="p">,</span> <span class="n">doe_data</span><span class="p">,</span> <span class="n">path_fmu</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bokeh.palettes</span> <span class="kn">import</span> <span class="n">Category10</span>
+<span class="n">colormap</span> <span class="o">=</span> <span class="n">Category10</span><span class="p">[</span><span class="n">n_simu</span><span class="p">]</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">plot_width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">plot_height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+<span class="n">list_color</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">list_df</span><span class="p">,</span> <span class="n">doe_data</span><span class="p">,</span> <span class="n">colormap</span><span class="p">):</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="n">list_output</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">legend_label</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">legend</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="s2">&quot;bottom_right&quot;</span>
+<span class="n">p</span><span class="o">.</span><span class="n">legend</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">list_input</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">show</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="bibliography">
@@ -724,7 +422,6 @@ If <code class="docutils literal notranslate"><span class="pre">mode_car_Cr</spa
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="index.html" title="previous page">ThermoSysPro educational book</a>
-    <a class='right-next' id="next-link" href="interactive.html" title="next page">Bokeh</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
