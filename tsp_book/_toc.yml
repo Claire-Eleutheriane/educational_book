@@ -2,3 +2,4 @@
 - file: docs/index
   sections:
     - file: docs/centrifugal_pump
+    - file: docs/simulate_fmu_bokeh
