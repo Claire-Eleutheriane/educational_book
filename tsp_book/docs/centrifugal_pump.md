@@ -143,7 +143,6 @@ show(p)
 
 
 ```{code-cell} ipython3
-:tags: [hide-cell]
 from os.path import join
 import matplotlib.pyplot as plt
 
@@ -190,7 +189,6 @@ list_df = fmpy_sim.simulate_on_doe(
 ```
 
 ```{code-cell} ipython3
-:tags: [hide-input]
 from bokeh.palettes import Category10
 colormap = Category10[n_simu]
 
