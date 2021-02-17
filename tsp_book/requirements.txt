@@ -1,5 +1,7 @@
 sphinx
 jupyter-book
 sphinxcontrib-bibtex
-plotly
+fmpy
+numpy
+pandas
 bokeh
