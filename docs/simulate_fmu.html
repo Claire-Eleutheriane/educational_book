@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ThermoSysPro educational book &#8212; ThermoSysPro educational book</title>
+    <title>Test running FMU online &#8212; ThermoSysPro educational book</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,7 +54,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Centrifugal pump" href="centrifugal_pump.html" />
+    <link rel="prev" title="Centrifugal pump" href="centrifugal_pump.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -84,14 +84,14 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+    <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="centrifugal_pump.html">
    Centrifugal pump
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="simulate_fmu.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Test running FMU online
   </a>
  </li>
@@ -133,9 +133,12 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../_sources/docs/simulate_fmu.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/docs/index.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/docs/simulate_fmu.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -155,6 +158,23 @@
 
         <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ThermoSysPro/educational_book/master?urlpath=tree/tsp_book/docs/simulate_fmu.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
     </div>
 
     <!-- Table of contents -->
@@ -167,15 +187,38 @@
         
               <div>
                 
-  <div class="section" id="thermosyspro-educational-book">
-<h1>ThermoSysPro educational book<a class="headerlink" href="#thermosyspro-educational-book" title="Permalink to this headline">¶</a></h1>
-<p>This educational book is based on the book <a class="reference external" href="https://www.springer.com/gp/book/9783030051044">“Modeling and Simulation of Thermal Power Plants using ThermoSysPro”</a> written by the main developers of the ThermoSysPro library, Daniel Bouskela and Baligh El Hefni.</p>
-<p><a class="reference external" href="https://www.edf.fr/">EDF</a> and <a class="reference external" href="https://www.phimeca.com/">Phimeca Engineering</a> allied their strength to develop this online book. The purpose is to learn to use the <a class="reference external" href="https://modelica.org/">Modelica</a> library ThermoSysPro through examples and use cases. The statistical analysis of ThermoSysPro models is made by Phimeca using <a class="reference external" href="https://www.python.org/">Python</a> language.</p>
-<p>More information about the library can be found on ThermoSysPro <a class="reference external" href="https://thermosyspro.com/">website</a>, <a class="reference external" href="https://thermosyspro.gitlab.io/documentation/">documentation</a> and <a class="reference external" href="https://github.com/ThermoSysPro/ThermoSysPro">GitHub page</a>.</p>
-<div class="figure align-right" id="logo-modelica">
-<a class="reference internal image-reference" href="../_images/logo_modelica.png"><img alt="../_images/logo_modelica.png" src="../_images/logo_modelica.png" style="height: 150px;" /></a>
+  <div class="section" id="test-running-fmu-online">
+<h1>Test running FMU online<a class="headerlink" href="#test-running-fmu-online" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span>
+<span class="kn">import</span> <span class="nn">fmpy</span>
+
+<span class="n">directory</span> <span class="o">=</span> <span class="s2">&quot;../script/fmu&quot;</span>
+<span class="n">fmu_filename</span> <span class="o">=</span> <span class="s2">&quot;PumpMotor.fmu&quot;</span>
+<span class="n">path_fmu</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">fmu_filename</span><span class="p">)</span>
+
+<span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;validate&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;fmi_type&quot;</span><span class="p">:</span> <span class="s2">&quot;ModelExchange&quot;</span><span class="p">,</span> <span class="s2">&quot;solver&quot;</span><span class="p">:</span> <span class="s2">&quot;CVode&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;relative_tolerance&quot;</span><span class="p">:</span> <span class="mf">1e-6</span>
+<span class="p">}</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">fmpy</span><span class="o">.</span><span class="n">simulate_fmu</span><span class="p">(</span><span class="n">path_fmu</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0.   , 4.70341141e-21, -2.21807472e-17, -1.81462139e-26, 100000., 30.)
+ (0.001, 4.70340916e-21, -2.21807471e-17,  3.17202337e-25, 100000., 30.)
+ (0.002, 4.70340588e-21, -2.21807471e-17,  6.52268638e-25, 100000., 30.)
+ ...
+ (0.999, 4.35746572e-21, -2.21806941e-17,  2.31197407e-22, 100000., 30.)
+ (1.   , 4.35686463e-21, -2.21806941e-17,  2.31342813e-22, 100000., 30.)
+ (1.   , 4.35686463e-21, -2.21806941e-17,  2.31342813e-22, 100000., 30.)]
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -207,7 +250,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='right-next' id="next-link" href="centrifugal_pump.html" title="next page">Centrifugal pump</a>
+    <a class='left-prev' id="prev-link" href="centrifugal_pump.html" title="previous page">Centrifugal pump</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
