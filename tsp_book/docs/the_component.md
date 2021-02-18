@@ -29,22 +29,22 @@ The purpose of this case study is to understand the functioning of the pump comp
 
 Two ThermoSysPro components model a centrifugal pump: [StaticCentrifugalPump](https://thermosyspro.gitlab.io/documentation/src/WaterSteam/Machines/StaticCentrifugalPump.html) and [CentrifugalPump](https://thermosyspro.gitlab.io/documentation/src/WaterSteam/Machines/CentrifugalPump.html).
 
-CentrifugalPump is a very general pump model, which enables all functioning modes except for cavitation.
+*CentrifugalPump* is a very general pump model, which enables all functioning modes except for cavitation.
 This component covers all functioning modes in static as well as in dynamic.
 In practice, we need the characteristic on the four quadrants which are rarely given by the pump constructors.
 
 ```{figure} /_static/centrifugal_pump/characteristic_domain.png
 ---
-height: 300px
+height: 400px
 name: characteristic_domain
 ---
 Centrifugal pump operating domains.
 ```
 
-StaticCentrifugalPump can be seen as a static restriction of CentrifugalPump to the first quadrant, corresponding to "Normal pumping".
+*StaticCentrifugalPump* can be seen as a static restriction of CentrifugalPump to the first quadrant, corresponding to "Normal pumping".
 This component must be used only in normal functioning, even only in nominal functioning as dynamic aspects are neglected.
 
-StaticCentrifugalPump thus corresponds to CentrifugalPump with:
+*StaticCentrifugalPump* thus corresponds to *CentrifugalPump* with:
 - static equations (derived terms are removed),
 - semi-parabolic head characteristic,
 - semi-parabolic torque characteristic (analytic formula which is exact only around the nominal point $\theta = \frac{\pi}{4}$).
@@ -54,7 +54,7 @@ StaticCentrifugalPump thus corresponds to CentrifugalPump with:
 height: 200px
 name: static_vs_dynamic
 ---
-StaticCentrifugalPump (left) and CentrifugalPump (right).
+*StaticCentrifugalPump* (left) and *CentrifugalPump* (right).
 ```
 
 In the following case study, we employ the CentrifugalPump component.
