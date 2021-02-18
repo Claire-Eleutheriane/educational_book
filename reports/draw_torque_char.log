@@ -32,6 +32,7 @@ p.legend.title = list_input[0]
 p.xaxis[0].axis_label = 'Time (s)'
 p.yaxis[0].axis_label = 'Mass flow rate (kg/s)'
 p.legend.click_policy="hide"
+p.title.text = 'Click on legend entries to hide the corresponding lines'
 show(p)
 ------------------
 
@@ -47,7 +48,7 @@ show(p)
 During handling of the above exception, another exception occurred:
 
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-2-d269ad6f5e2f>[0m in [0;36m<module>[0;34m[0m
+[0;32m<ipython-input-2-634b4bcbbb9d>[0m in [0;36m<module>[0;34m[0m
 [1;32m      3[0m [0mlist_input[0m [0;34m=[0m [0;34m[[0m[0;34m"Pump.rh_coef[1]"[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
 [1;32m      4[0m [0mdoe_data[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0marray[0m[0;34m([0m[0;34m[[0m[0;34m[[0m[0mxx[0m[0;34m][0m [0;32mfor[0m [0mxx[0m [0;32min[0m [0mdic_range[0m[0;34m[[0m[0mlist_input[0m[0;34m[[0m[0;36m0[0m[0;34m][0m[0;34m][0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 5[0;31m [0mlist_df[0m [0;34m=[0m [0msimulate_on_doe[0m[0;34m([0m[0mlist_input[0m[0;34m,[0m [0mdoe_data[0m[0;34m,[0m [0mpath_fmu[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
