@@ -2,7 +2,7 @@
 # @Author: Claire-Eleuthèriane Gerrer
 # @Date:   2020-02-14 16:26:56
 # @Last Modified by:   Claire-Eleuthèriane Gerrer
-# @Last Modified time: 2020-07-30 15:13:14
+# @Last Modified time: 2021-02-18 09:42:36
 
 from __future__ import division
 import numpy as np
@@ -48,7 +48,6 @@ def simulate_on_doe(list_input, doe_data, path_fmu, **kwargs):
             kwargs["start_values"].update(dic)
         except KeyError:
             kwargs["start_values"] = dic
-        print(ii)
         try:
             result = fmpy.simulate_fmu(path_fmu, **kwargs)
             result = pd.DataFrame(result)
