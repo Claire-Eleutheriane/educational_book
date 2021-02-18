@@ -240,16 +240,16 @@
 <div class="section" id="centrifugalpump-versus-staticcentrifugalpump">
 <h2>CentrifugalPump versus StaticCentrifugalPump<a class="headerlink" href="#centrifugalpump-versus-staticcentrifugalpump" title="Permalink to this headline">¶</a></h2>
 <p>Two ThermoSysPro components model a centrifugal pump: <a class="reference external" href="https://thermosyspro.gitlab.io/documentation/src/WaterSteam/Machines/StaticCentrifugalPump.html">StaticCentrifugalPump</a> and <a class="reference external" href="https://thermosyspro.gitlab.io/documentation/src/WaterSteam/Machines/CentrifugalPump.html">CentrifugalPump</a>.</p>
-<p>CentrifugalPump is a very general pump model, which enables all functioning modes except for cavitation.
+<p><em>CentrifugalPump</em> is a very general pump model, which enables all functioning modes except for cavitation.
 This component covers all functioning modes in static as well as in dynamic.
 In practice, we need the characteristic on the four quadrants which are rarely given by the pump constructors.</p>
 <div class="figure align-default" id="characteristic-domain">
-<a class="reference internal image-reference" href="../_images/characteristic_domain.png"><img alt="../_images/characteristic_domain.png" src="../_images/characteristic_domain.png" style="height: 300px;" /></a>
+<a class="reference internal image-reference" href="../_images/characteristic_domain.png"><img alt="../_images/characteristic_domain.png" src="../_images/characteristic_domain.png" style="height: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Centrifugal pump operating domains.</span><a class="headerlink" href="#characteristic-domain" title="Permalink to this image">¶</a></p>
 </div>
-<p>StaticCentrifugalPump can be seen as a static restriction of CentrifugalPump to the first quadrant, corresponding to “Normal pumping”.
+<p><em>StaticCentrifugalPump</em> can be seen as a static restriction of CentrifugalPump to the first quadrant, corresponding to “Normal pumping”.
 This component must be used only in normal functioning, even only in nominal functioning as dynamic aspects are neglected.</p>
-<p>StaticCentrifugalPump thus corresponds to CentrifugalPump with:</p>
+<p><em>StaticCentrifugalPump</em> thus corresponds to <em>CentrifugalPump</em> with:</p>
 <ul class="simple">
 <li><p>static equations (derived terms are removed),</p></li>
 <li><p>semi-parabolic head characteristic,</p></li>
@@ -257,7 +257,7 @@ This component must be used only in normal functioning, even only in nominal fun
 </ul>
 <div class="figure align-default" id="static-vs-dynamic">
 <a class="reference internal image-reference" href="../_images/static_vs_dynamic.png"><img alt="../_images/static_vs_dynamic.png" src="../_images/static_vs_dynamic.png" style="height: 200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">StaticCentrifugalPump (left) and CentrifugalPump (right).</span><a class="headerlink" href="#static-vs-dynamic" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text"><em>StaticCentrifugalPump</em> (left) and <em>CentrifugalPump</em> (right).</span><a class="headerlink" href="#static-vs-dynamic" title="Permalink to this image">¶</a></p>
 </div>
 <p>In the following case study, we employ the CentrifugalPump component.</p>
 </div>
