@@ -3,3 +3,4 @@
   sections:
     - file: docs/centrifugal_pump
     - file: docs/simulate_fmu
+    - file: docs/simulate_fmu_low_ambition
