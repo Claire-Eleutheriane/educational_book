@@ -2,4 +2,3 @@ file: index
 sections:
 - file: simulate_fmu
 - file: centrifugal_pump
-- file: simulate_fmu_low_ambition
