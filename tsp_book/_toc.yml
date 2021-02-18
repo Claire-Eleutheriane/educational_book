@@ -1,7 +1,8 @@
 - file: docs/index
 
-- part: Centrifugal Punp
+- part: Centrifugal Pump
   chapters:
-    - file: docs/centrifugal_pump
+    - file: docs/the_component
+    - file: docs/complete_characteristic
     - file: docs/draw_head_char
     - file: docs/draw_torque_char
