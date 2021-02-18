@@ -1,5 +1,7 @@
-# - file: README
 - file: docs/index
-  sections:
+
+- part: Centrifugal Punp
+  chapters:
     - file: docs/centrifugal_pump
-    - file: docs/simulate_fmu
+    - file: docs/draw_head_char
+    - file: docs/draw_torque_char
