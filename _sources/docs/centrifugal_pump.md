@@ -11,7 +11,7 @@ kernelspec:
 
 (centrifugal_pump)=
 
-# Centrifugal pump
+# The component
 
 A centrifugal pump converts rotational energy from a motor to energy in a moving fluid, which creates pressure.
 
