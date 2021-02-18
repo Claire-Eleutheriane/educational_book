@@ -240,12 +240,24 @@
 <div class="section" id="centrifugalpump-versus-staticcentrifugalpump">
 <h2>CentrifugalPump versus StaticCentrifugalPump<a class="headerlink" href="#centrifugalpump-versus-staticcentrifugalpump" title="Permalink to this headline">¶</a></h2>
 <p>Two ThermoSysPro components model a centrifugal pump: <a class="reference external" href="https://thermosyspro.gitlab.io/documentation/src/WaterSteam/Machines/StaticCentrifugalPump.html">StaticCentrifugalPump</a> and <a class="reference external" href="https://thermosyspro.gitlab.io/documentation/src/WaterSteam/Machines/CentrifugalPump.html">CentrifugalPump</a>.</p>
-<p>For the static centrifugal pump, the rotational speed of the pump is fixed.
-It is therefore impossible to diminish the pump speed to regulate or modify the output flow.
-The centrifugal pump however accepts modifications of the rotational speed during operations.</p>
+<p>CentrifugalPump is a very general pump model, which enables all functioning modes except for cavitation.
+This component covers all functioning modes in static as well as in dynamic.
+In practice, we need the characteristic on the four quadrants which are rarely given by the pump constructors.</p>
+<div class="figure align-default" id="characteristic-domain">
+<a class="reference internal image-reference" href="../_images/characteristic_domain.png"><img alt="../_images/characteristic_domain.png" src="../_images/characteristic_domain.png" style="height: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Centrifugal pump operating domains.</span><a class="headerlink" href="#characteristic-domain" title="Permalink to this image">¶</a></p>
+</div>
+<p>StaticCentrifugalPump can be seen as a static restriction of CentrifugalPump to the first quadrant, corresponding to “Normal pumping”.
+This component must be used only in normal functioning, even only in nominal functioning as dynamic aspects are neglected.</p>
+<p>StaticCentrifugalPump thus corresponds to CentrifugalPump with:</p>
+<ul class="simple">
+<li><p>static equations (derived terms are removed),</p></li>
+<li><p>semi-parabolic head characteristic,</p></li>
+<li><p>semi-parabolic torque characteristic (analytic formula which is exact only around the nominal point <span class="math notranslate nohighlight">\(\theta = \frac{\pi}{4}\)</span>).</p></li>
+</ul>
 <div class="figure align-default" id="static-vs-dynamic">
 <a class="reference internal image-reference" href="../_images/static_vs_dynamic.png"><img alt="../_images/static_vs_dynamic.png" src="../_images/static_vs_dynamic.png" style="height: 200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">StaticCentrifugalPump (left) and CentrifugalPump (right).</span><a class="headerlink" href="#static-vs-dynamic" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">StaticCentrifugalPump (left) and CentrifugalPump (right).</span><a class="headerlink" href="#static-vs-dynamic" title="Permalink to this image">¶</a></p>
 </div>
 <p>In the following case study, we employ the CentrifugalPump component.</p>
 </div>
@@ -256,12 +268,12 @@ The correspondance between theoretical and Modelica notations is explicited in t
 <p>We connect the centrifugal pump to a motor. The motor starts working at <span class="math notranslate nohighlight">\(t=0\)</span> and activates the pump. A pipe links the pump to a water tank and to a valv. A resistance mimics the friction of the liquid on the inner side of the pipe.</p>
 <div class="figure align-default" id="pump-motor-image">
 <a class="reference internal image-reference" href="../_images/omedit_pump_motor.png"><img alt="../_images/omedit_pump_motor.png" src="../_images/omedit_pump_motor.png" style="height: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Cooling system using a centrifugal pump activated by a motor.</span><a class="headerlink" href="#pump-motor-image" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Cooling system using a centrifugal pump activated by a motor.</span><a class="headerlink" href="#pump-motor-image" title="Permalink to this image">¶</a></p>
 </div>
 <p>We are interested in the mass flow rate at the output of the pump. The mass flow rate must reach a defined nominal value for the installation to work properly.</p>
 <div class="figure align-default" id="pump-output-image">
 <a class="reference internal image-reference" href="../_images/pump_output.png"><img alt="../_images/pump_output.png" src="../_images/pump_output.png" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Evolution of the fluid mass flow rate in the pipe after switching on the motor.</span><a class="headerlink" href="#pump-output-image" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Evolution of the fluid mass flow rate in the pipe after switching on the motor.</span><a class="headerlink" href="#pump-output-image" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="bibliography">
