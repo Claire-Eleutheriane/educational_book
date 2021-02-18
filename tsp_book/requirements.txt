@@ -5,4 +5,3 @@ fmpy
 numpy
 pandas
 bokeh
-sys
