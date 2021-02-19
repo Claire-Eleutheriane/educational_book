@@ -204,10 +204,6 @@
                 
   <div class="section" id="head-semi-parabolic-characteristic">
 <h1>Head semi-parabolic characteristic<a class="headerlink" href="#head-semi-parabolic-characteristic" title="Permalink to this headline">¶</a></h1>
-<p>The semi-parabolic head and torque characteristics are valid on the domain <span class="math notranslate nohighlight">\((q, \omega) \ge 0\)</span>.<br />
-If <code class="docutils literal notranslate"><span class="pre">mode_car_hn</span></code>=2, the couple of parameters <code class="docutils literal notranslate"><span class="pre">hn_coef</span></code> rule the head characteristic.<br />
-<code class="docutils literal notranslate"><span class="pre">hn_coef[1]</span></code> and <code class="docutils literal notranslate"><span class="pre">hn_coef[2]</span></code> correspond to <span class="math notranslate nohighlight">\(a_2\)</span> and <span class="math notranslate nohighlight">\(a_0\)</span>, i.e. the square and constant coefficient of the characteristic.<br />
-The following figures show their effect on the mass flow rate evolution in the cooling system.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -584,6 +580,10 @@ The following figures show their effect on the mass flow rate evolution in the c
   }
 }(window));</script></div>
 </div>
+<p>The semi-parabolic head and torque characteristics are valid on the domain <span class="math notranslate nohighlight">\((q, \omega) \ge 0\)</span>.<br />
+If <code class="docutils literal notranslate"><span class="pre">mode_car_hn</span></code>=2, the couple of parameters <code class="docutils literal notranslate"><span class="pre">hn_coef</span></code> rule the head characteristic.<br />
+<code class="docutils literal notranslate"><span class="pre">hn_coef[1]</span></code> and <code class="docutils literal notranslate"><span class="pre">hn_coef[2]</span></code> correspond to <span class="math notranslate nohighlight">\(a_2\)</span> and <span class="math notranslate nohighlight">\(a_0\)</span>, i.e. the square and constant coefficient of the characteristic.<br />
+The following figures show their effect on the mass flow rate evolution in the cooling system.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Focus on one parameter</span>
@@ -642,6 +642,7 @@ The following figures show their effect on the mass flow rate evolution in the c
   }
 })(window);</script></div>
 </div>
+<p>Changing hn_coef[1] obviously influences the nominal mass flow rate reached by the pump.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_input</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Pump.hn_coef[2]&quot;</span><span class="p">]</span>

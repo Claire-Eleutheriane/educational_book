@@ -203,10 +203,6 @@
                 
   <div class="section" id="torque-semi-parabolic-characteristics">
 <h1>Torque semi-parabolic characteristics<a class="headerlink" href="#torque-semi-parabolic-characteristics" title="Permalink to this headline">¶</a></h1>
-<p>The semi-parabolic head and torque characteristics are valid on the domain <span class="math notranslate nohighlight">\((q, \omega) \ge 0\)</span>.
-If <code class="docutils literal notranslate"><span class="pre">mode_car_Cr</span></code>=2, the couple of parameters <code class="docutils literal notranslate"><span class="pre">rh_coef</span></code> rule the torque characteristic.</p>
-<p>The parameters <code class="docutils literal notranslate"><span class="pre">rh_coef[1]</span></code> and <code class="docutils literal notranslate"><span class="pre">rh_coef[2]</span></code> correspond to <span class="math notranslate nohighlight">\(b_2\)</span> and <span class="math notranslate nohighlight">\(b_1\)</span>, i.e. the coefficients of <span class="math notranslate nohighlight">\(x^2\)</span> and <span class="math notranslate nohighlight">\(x\)</span> in the characteristic.<br />
-The following figures show their effect on the mass flow rate evolution in the cooling system.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -585,6 +581,10 @@ The following figures show their effect on the mass flow rate evolution in the c
   }
 }(window));</script></div>
 </div>
+<p>The semi-parabolic head and torque characteristics are valid on the domain <span class="math notranslate nohighlight">\((q, \omega) \ge 0\)</span>.
+If <code class="docutils literal notranslate"><span class="pre">mode_car_Cr</span></code>=2, the couple of parameters <code class="docutils literal notranslate"><span class="pre">rh_coef</span></code> rule the torque characteristic.</p>
+<p>The parameters <code class="docutils literal notranslate"><span class="pre">rh_coef[1]</span></code> and <code class="docutils literal notranslate"><span class="pre">rh_coef[2]</span></code> correspond to <span class="math notranslate nohighlight">\(b_2\)</span> and <span class="math notranslate nohighlight">\(b_1\)</span>, i.e. the coefficients of <span class="math notranslate nohighlight">\(x^2\)</span> and <span class="math notranslate nohighlight">\(x\)</span> in the characteristic.<br />
+The following figures show their effect on the mass flow rate evolution in the cooling system.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Focus on one parameter</span>
@@ -642,6 +642,7 @@ The following figures show their effect on the mass flow rate evolution in the c
   }
 })(window);</script></div>
 </div>
+<p>Changing <code class="docutils literal notranslate"><span class="pre">rh_coef[1]</span></code> affects the rise time to the nominal mass flow rate.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_input</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Pump.rh_coef[2]&quot;</span><span class="p">]</span>
@@ -695,7 +696,7 @@ The following figures show their effect on the mass flow rate evolution in the c
   }
 })(window);</script></div>
 </div>
-<p>Changing <code class="docutils literal notranslate"><span class="pre">rh_coef[1]</span></code> and <code class="docutils literal notranslate"><span class="pre">rh_coef[2]</span></code> affects the rise time to the nominal mass flow rate.</p>
+<p>Changing <code class="docutils literal notranslate"><span class="pre">rh_coef[2]</span></code> similarly affects the rise time to the nominal mass flow rate.</p>
 </div>
 
     <script type="text/x-thebe-config">
