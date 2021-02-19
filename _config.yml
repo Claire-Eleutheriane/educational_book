@@ -26,7 +26,7 @@ notebook_interface            : "notebook"
 # Launch button settings
 repository:
   url                         : https://github.com/ThermoSysPro/educational_book
-  path_to_book                : "tsp_book"
+  path_to_book                : "."
 
 binder:
   binderhub_url               : "https://mybinder.org"
@@ -38,4 +38,4 @@ latex:
     targetname: book.tex
 
 bibtex_bibfiles:
-   - _bibliography/references.bib
+   - references.bib

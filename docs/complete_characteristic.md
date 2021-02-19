@@ -76,5 +76,5 @@ show(p)
 
 ## Bibliography
 
-```{bibliography} ../_bibliography/references.bib
+```{bibliography} ../references.bib
 ```

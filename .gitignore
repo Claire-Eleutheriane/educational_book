@@ -58,7 +58,6 @@ export/data/*
 
 # Ignore example
 
-quantecon-mini-example/*
-tsp_book/_build/*
-tsp_book/.DS_Store
-tsp_book/__pycache__/
+_build/*
+.DS_Store
+__pycache__/
