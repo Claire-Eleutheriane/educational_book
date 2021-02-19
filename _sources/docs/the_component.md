@@ -94,5 +94,5 @@ Evolution of the fluid mass flow rate in the pipe after switching on the motor.
 
 ## Bibliography
 
-```{bibliography} ../_bibliography/references.bib
+```{bibliography} ../references.bib
 ```
