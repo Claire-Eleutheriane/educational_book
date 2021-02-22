@@ -2,7 +2,7 @@
 # Book settings
 title : ThermoSysPro educational book
 author: EDF Lab Chatou PRISM and PHIMECA Engineering
-logo: 'logo_tsp.png'
+logo: '_static/logo_tsp.png'
 
 # Short description about the book
 description: >-
