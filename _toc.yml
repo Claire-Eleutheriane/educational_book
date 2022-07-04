@@ -1,8 +1,9 @@
-- file: docs/index
-
-- part: Centrifugal Pump
-  chapters:
-    - file: docs/the_component
-    - file: docs/complete_characteristic
-    - file: docs/draw_head_char
-    - file: docs/draw_torque_char
+format: jb-book
+root: docs/index
+options:
+  caption: Centrifugal Pump
+chapters:
+- file: docs/the_component
+- file: docs/complete_characteristic
+- file: docs/draw_head_char
+- file: docs/draw_torque_char
