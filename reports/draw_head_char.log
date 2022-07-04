@@ -1,19 +1,19 @@
 Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.8/x64/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+  File "/opt/hostedtoolcache/Python/3.8.13/x64/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
     executenb(
-  File "/opt/hostedtoolcache/Python/3.8.8/x64/lib/python3.8/site-packages/nbclient/client.py", line 1112, in execute
+  File "/opt/hostedtoolcache/Python/3.8.13/x64/lib/python3.8/site-packages/nbclient/client.py", line 1204, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/opt/hostedtoolcache/Python/3.8.8/x64/lib/python3.8/site-packages/nbclient/util.py", line 74, in wrapped
+  File "/opt/hostedtoolcache/Python/3.8.13/x64/lib/python3.8/site-packages/nbclient/util.py", line 84, in wrapped
     return just_run(coro(*args, **kwargs))
-  File "/opt/hostedtoolcache/Python/3.8.8/x64/lib/python3.8/site-packages/nbclient/util.py", line 53, in just_run
+  File "/opt/hostedtoolcache/Python/3.8.13/x64/lib/python3.8/site-packages/nbclient/util.py", line 62, in just_run
     return loop.run_until_complete(coro)
-  File "/opt/hostedtoolcache/Python/3.8.8/x64/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+  File "/opt/hostedtoolcache/Python/3.8.13/x64/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
     return future.result()
-  File "/opt/hostedtoolcache/Python/3.8.8/x64/lib/python3.8/site-packages/nbclient/client.py", line 553, in async_execute
+  File "/opt/hostedtoolcache/Python/3.8.13/x64/lib/python3.8/site-packages/nbclient/client.py", line 663, in async_execute
     await self.async_execute_cell(
-  File "/opt/hostedtoolcache/Python/3.8.8/x64/lib/python3.8/site-packages/nbclient/client.py", line 857, in async_execute_cell
-    self._check_raise_for_error(cell, exec_reply)
-  File "/opt/hostedtoolcache/Python/3.8.8/x64/lib/python3.8/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+  File "/opt/hostedtoolcache/Python/3.8.13/x64/lib/python3.8/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.8.13/x64/lib/python3.8/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
@@ -39,29 +39,29 @@ show(p)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-1-35b612403557>[0m in [0;36msimulate_on_doe[0;34m(list_input, doe_data, path_fmu, **kwargs)[0m
-[1;32m     54[0m             [0mresult[0m [0;34m=[0m [0mfmpy[0m[0;34m.[0m[0msimulate_fmu[0m[0;34m([0m[0mpath_fmu[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 55[0;31m             [0mresult[0m [0;34m=[0m [0mpd[0m[0;34m.[0m[0mDataFrame[0m[0;34m([0m[0mresult[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     56[0m             [0mresult[0m [0;34m=[0m [0mresult[0m[0;34m.[0m[0mset_index[0m[0;34m([0m[0;34m"time"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+Input [0;32mIn [1][0m, in [0;36msimulate_on_doe[0;34m(list_input, doe_data, path_fmu, **kwargs)[0m
+[1;32m     54[0m result [38;5;241m=[39m fmpy[38;5;241m.[39msimulate_fmu(path_fmu, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+[0;32m---> 55[0m result [38;5;241m=[39m [43mpd[49m[38;5;241m.[39mDataFrame(result)
+[1;32m     56[0m result [38;5;241m=[39m result[38;5;241m.[39mset_index([38;5;124m"[39m[38;5;124mtime[39m[38;5;124m"[39m)
 
 [0;31mNameError[0m: name 'pd' is not defined
 
 During handling of the above exception, another exception occurred:
 
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-2-01c0b4cc27e3>[0m in [0;36m<module>[0;34m[0m
-[1;32m      3[0m [0mlist_input[0m [0;34m=[0m [0;34m[[0m[0;34m"Pump.hn_coef[1]"[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
-[1;32m      4[0m [0mdoe_data[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0marray[0m[0;34m([0m[0;34m[[0m[0;34m[[0m[0mxx[0m[0;34m][0m [0;32mfor[0m [0mxx[0m [0;32min[0m [0mdic_range[0m[0;34m[[0m[0mlist_input[0m[0;34m[[0m[0;36m0[0m[0;34m][0m[0;34m][0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 5[0;31m [0mlist_df[0m [0;34m=[0m [0msimulate_on_doe[0m[0;34m([0m[0mlist_input[0m[0;34m,[0m [0mdoe_data[0m[0;34m,[0m [0mpath_fmu[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      6[0m [0;34m[0m[0m
-[1;32m      7[0m [0mcolormap[0m [0;34m=[0m [0mCategory10[0m[0;34m[[0m[0mn_simu[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+Input [0;32mIn [2][0m, in [0;36m<cell line: 5>[0;34m()[0m
+[1;32m      3[0m list_input [38;5;241m=[39m [[38;5;124m"[39m[38;5;124mPump.hn_coef[1][39m[38;5;124m"[39m]
+[1;32m      4[0m doe_data [38;5;241m=[39m np[38;5;241m.[39marray([[xx] [38;5;28;01mfor[39;00m xx [38;5;129;01min[39;00m dic_range[list_input[[38;5;241m0[39m]]])
+[0;32m----> 5[0m list_df [38;5;241m=[39m [43msimulate_on_doe[49m[43m([49m[43mlist_input[49m[43m,[49m[43m [49m[43mdoe_data[49m[43m,[49m[43m [49m[43mpath_fmu[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[1;32m      7[0m colormap [38;5;241m=[39m Category10[n_simu]
+[1;32m      9[0m p [38;5;241m=[39m figure(plot_width[38;5;241m=[39m[38;5;241m400[39m, plot_height[38;5;241m=[39m[38;5;241m400[39m)
 
-[0;32m<ipython-input-1-35b612403557>[0m in [0;36msimulate_on_doe[0;34m(list_input, doe_data, path_fmu, **kwargs)[0m
-[1;32m     59[0m         [0;32mexcept[0m [0mException[0m [0;32mas[0m [0mexc[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     60[0m             [0mprint[0m[0;34m([0m[0mexc[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 61[0;31m             [0mresult[0m [0;34m=[0m [0mpd[0m[0;34m.[0m[0mDataFrame[0m[0;34m([0m[0;34m[[0m[0mnp[0m[0;34m.[0m[0mNaN[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     62[0m         [0mlist_result[0m[0;34m.[0m[0mappend[0m[0;34m([0m[0mresult[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     63[0m     [0;32mreturn[0m [0mlist_result[0m[0;34m[0m[0;34m[0m[0m
+Input [0;32mIn [1][0m, in [0;36msimulate_on_doe[0;34m(list_input, doe_data, path_fmu, **kwargs)[0m
+[1;32m     59[0m     [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m [38;5;28;01mas[39;00m exc:
+[1;32m     60[0m         [38;5;28mprint[39m(exc)
+[0;32m---> 61[0m         result [38;5;241m=[39m [43mpd[49m[38;5;241m.[39mDataFrame([np[38;5;241m.[39mNaN])
+[1;32m     62[0m     list_result[38;5;241m.[39mappend(result)
+[1;32m     63[0m [38;5;28;01mreturn[39;00m list_result
 
 [0;31mNameError[0m: name 'pd' is not defined
 NameError: name 'pd' is not defined

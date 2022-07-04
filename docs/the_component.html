@@ -4,10 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>The component &#8212; ThermoSysPro educational book</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -17,82 +20,99 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
-
-    
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Complete characteristics" href="complete_characteristic.html" />
     <link rel="prev" title="ThermoSysPro educational book" href="index.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
 
-
-
+    <!-- Google Analytics -->
+    
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  <img src="../_static/logo_tsp.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">ThermoSysPro educational book</h1>
-  
-</a>
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo_tsp.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ThermoSysPro educational book</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p class="caption collapsible-parent">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Centrifugal Pump
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    The component
@@ -115,12 +135,18 @@
  </li>
 </ul>
 
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -128,82 +154,163 @@
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
+    <div class="header-article row sticky-top noprint">
+        
 
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../_sources/docs/the_component.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/docs/the_component.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ThermoSysPro/educational_book/master?urlpath=tree/./docs/the_component.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/docs/the_component.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/docs/the_component.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/ThermoSysPro/educational_book/master?urlpath=tree/./docs/the_component.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
     </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#centrifugalpump-versus-staticcentrifugalpump">
    CentrifugalPump versus StaticCentrifugalPump
@@ -221,34 +328,70 @@
  </li>
 </ul>
 
-        </nav>
-        
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>The component</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#centrifugalpump-versus-staticcentrifugalpump">
+   CentrifugalPump versus StaticCentrifugalPump
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-model">
+   The model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bibliography">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="the-component">
-<span id="centrifugal-pump"></span><h1>The component<a class="headerlink" href="#the-component" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-component">
+<span id="centrifugal-pump"></span><h1>The component<a class="headerlink" href="#the-component" title="Permalink to this headline">#</a></h1>
 <p>A centrifugal pump converts rotational energy from a motor to energy in a moving fluid, which creates pressure.</p>
-<div class="figure align-default" id="scheme">
+<figure class="align-default" id="scheme">
 <a class="reference internal image-reference" href="../_images/scheme.png"><img alt="../_images/scheme.png" src="../_images/scheme.png" style="height: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Schematic diagramm of a centrifugal pump.</span><a class="headerlink" href="#scheme" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Schematic diagramm of a centrifugal pump.</span><a class="headerlink" href="#scheme" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>The purpose of this case study is to understand the functioning of the pump component and model a cooling system.</p>
-<div class="section" id="centrifugalpump-versus-staticcentrifugalpump">
-<h2>CentrifugalPump versus StaticCentrifugalPump<a class="headerlink" href="#centrifugalpump-versus-staticcentrifugalpump" title="Permalink to this headline">¶</a></h2>
+<section id="centrifugalpump-versus-staticcentrifugalpump">
+<h2>CentrifugalPump versus StaticCentrifugalPump<a class="headerlink" href="#centrifugalpump-versus-staticcentrifugalpump" title="Permalink to this headline">#</a></h2>
 <p>Two ThermoSysPro components model a centrifugal pump: <a class="reference external" href="https://thermosyspro.gitlab.io/documentation/src/WaterSteam/Machines/StaticCentrifugalPump.html">StaticCentrifugalPump</a> and <a class="reference external" href="https://thermosyspro.gitlab.io/documentation/src/WaterSteam/Machines/CentrifugalPump.html">CentrifugalPump</a>.</p>
 <p><em>CentrifugalPump</em> is a very general pump model, which enables all functioning modes except for cavitation.
 This component covers all functioning modes in static as well as in dynamic.
 In practice, we need the characteristic on the four quadrants which are rarely given by the pump constructors.</p>
-<div class="figure align-default" id="characteristic-domain">
+<figure class="align-default" id="characteristic-domain">
 <a class="reference internal image-reference" href="../_images/characteristic_domain.png"><img alt="../_images/characteristic_domain.png" src="../_images/characteristic_domain.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Centrifugal pump operating domains.</span><a class="headerlink" href="#characteristic-domain" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Centrifugal pump operating domains.</span><a class="headerlink" href="#characteristic-domain" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p><em>StaticCentrifugalPump</em> can be seen as a static restriction of CentrifugalPump to the first quadrant, corresponding to “Normal pumping”.
 This component must be used only in normal functioning, even only in nominal functioning as dynamic aspects are neglected.</p>
 <p><em>StaticCentrifugalPump</em> thus corresponds to <em>CentrifugalPump</em> with:</p>
@@ -257,37 +400,44 @@ This component must be used only in normal functioning, even only in nominal fun
 <li><p>semi-parabolic head characteristic,</p></li>
 <li><p>semi-parabolic torque characteristic (analytic formula which is exact only around the nominal point <span class="math notranslate nohighlight">\(\theta = \frac{\pi}{4}\)</span>).</p></li>
 </ul>
-<div class="figure align-default" id="static-vs-dynamic">
+<figure class="align-default" id="static-vs-dynamic">
 <a class="reference internal image-reference" href="../_images/static_vs_dynamic.png"><img alt="../_images/static_vs_dynamic.png" src="../_images/static_vs_dynamic.png" style="height: 200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text"><em>StaticCentrifugalPump</em> (left) and <em>CentrifugalPump</em> (right).</span><a class="headerlink" href="#static-vs-dynamic" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text"><em>StaticCentrifugalPump</em> (left) and <em>CentrifugalPump</em> (right).</span><a class="headerlink" href="#static-vs-dynamic" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>In the following case study, we employ the CentrifugalPump component.</p>
-</div>
-<div class="section" id="the-model">
-<h2>The model<a class="headerlink" href="#the-model" title="Permalink to this headline">¶</a></h2>
-<p>The physics preceding the modeling choices of the component is detailed in <span id="id1">[<a class="reference internal" href="#id3"><span>EHB19</span></a>]</span>.
+</section>
+<section id="the-model">
+<h2>The model<a class="headerlink" href="#the-model" title="Permalink to this headline">#</a></h2>
+<p>The physics preceding the modeling choices of the component is detailed in <span id="id1">[<a class="reference internal" href="#id3" title="Baligh El Hefni and Daniel Bouskela. Modeling and Simulation of Thermal Power Plants with ThermoSysPro: A Theoretical Introduction and a Practical Guide. Springer, 2019.">EHB19</a>]</span>.
 The correspondance between theoretical and Modelica notations is explicited in the <a class="reference external" href="https://thermosyspro.gitlab.io/documentation/src/WaterSteam/Machines/CentrifugalPump.html">centrifugal pump online documentation</a>.</p>
 <p>We connect the centrifugal pump to a motor. The motor starts working at <span class="math notranslate nohighlight">\(t=0\)</span> and activates the pump. A pipe links the pump to a water tank and to a valv. A resistance mimics the friction of the liquid on the inner side of the pipe.</p>
-<div class="figure align-default" id="pump-motor-image">
+<figure class="align-default" id="pump-motor-image">
 <a class="reference internal image-reference" href="../_images/omedit_pump_motor.png"><img alt="../_images/omedit_pump_motor.png" src="../_images/omedit_pump_motor.png" style="height: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Cooling system using a centrifugal pump activated by a motor.</span><a class="headerlink" href="#pump-motor-image" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Cooling system using a centrifugal pump activated by a motor.</span><a class="headerlink" href="#pump-motor-image" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>We are interested in the mass flow rate at the output of the pump. The mass flow rate must reach a defined nominal value for the installation to work properly.</p>
-<div class="figure align-default" id="pump-output-image">
+<figure class="align-default" id="pump-output-image">
 <a class="reference internal image-reference" href="../_images/pump_output.png"><img alt="../_images/pump_output.png" src="../_images/pump_output.png" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Evolution of the fluid mass flow rate in the pipe after switching on the motor.</span><a class="headerlink" href="#pump-output-image" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="bibliography">
-<h2>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
-<p id="id2"><dl class="citation">
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Evolution of the fluid mass flow rate in the pipe after switching on the motor.</span><a class="headerlink" href="#pump-output-image" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="bibliography">
+<h2>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">#</a></h2>
+<div class="docutils container" id="id2">
+<dl class="citation">
 <dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">EHB19</a></span></dt>
 <dd><p>Baligh El Hefni and Daniel Bouskela. <em>Modeling and Simulation of Thermal Power Plants with ThermoSysPro: A Theoretical Introduction and a Practical Guide</em>. Springer, 2019.</p>
 </dd>
 </dl>
-</p>
 </div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -311,36 +461,48 @@ The correspondance between theoretical and Modelica notations is explicited in t
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="index.html" title="previous page">ThermoSysPro educational book</a>
-    <a class='right-next' id="next-link" href="complete_characteristic.html" title="next page">Complete characteristics</a>
-
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">ThermoSysPro educational book</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="complete_characteristic.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Complete characteristics</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By EDF Lab Chatou PRISM and PHIMECA Engineering<br/>
-        
-            &copy; Copyright 2020.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By EDF Lab Chatou PRISM and PHIMECA Engineering<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-    
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
-
-    
   </body>
 </html>
